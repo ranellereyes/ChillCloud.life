@@ -26,6 +26,9 @@
     "url": "https://github.com/ranellereyes/ChillCloud/issues"
   },
   "homepage": "https://github.com/ranellereyes/ChillCloud#readme",
+  "devDependencies": {
+    "redux-logger": "^2.8.1"
+  },
   "dependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
