@@ -1,4 +1,41 @@
-# Implementation Timeline
+# ChillCloud
+
+
+## Heroku Link
+
+Link to site (Not implemented yet)
+
+## MVP Features
+
+ChillCloud is a web application mimicking features of popular music streaming websites such as SoundCloud built using Ruby on Rails
+and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the
+following criteria with smooth, bug-free navigation, adequate seed data and
+sufficient CSS styling:
+
+- [ ] Hosting on Heroku
+- [ ] New account creation, login, and guest/demo login
+- [ ] Notes
+- [ ] Notebooks for organizing notes
+- [ ] Tags
+- [ ] Rich Text Editing
+- [ ] Infinite Scroll
+- [ ] Production README
+
+## Design Docs
+
+* [View Wireframes][wireframes]
+* [React Components][components]
+* [API endpoints][api-endpoints]
+* [DB schema][schema]
+* [Sample State][sample-state]
+
+[wireframes]: docs/wireframes/ChillCloud.pdf
+[components]: docs/component-hierarchy.md
+[sample-state]: docs/sample-state.md
+[api-endpoints]: docs/api-endpoints.md
+[schema]: docs/schema.md
+
+## Implementation Timeline
 
 ### Phase 1: Backend-Setup and Front End User Authentication (2 Days)
 
@@ -16,3 +53,9 @@ __Objective__: Add comment functionality to app.
 
 ### Phase 5: Users View (1 day)
 __Objective__: Add users view functionality.
+
+### Bonuses
+
+- Waveforms
+- Playlists and playbar queue
+- User likes and trending songs

@@ -8,6 +8,7 @@
 ### Nav Container
 
 - Search Container
+  - Search List Items
 - Auth Container
 
 ### Auth Container
@@ -31,7 +32,7 @@
 
 ### Side Bar
 
-- Artist List Items
+- Artist List Items (Trending Artists/Songs)
 
 ### Song View
 
@@ -40,9 +41,14 @@
   - Comment Items
 - Create Comment Form
 
+### Upload
+
+- Upload Form
+
 path | Component
 -----|----------
 / | App
 /stream | Stream
 /users/:id | UsersView
 /songs/:id | SongView
+/upload | Upload
