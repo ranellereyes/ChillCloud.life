@@ -14,12 +14,11 @@ sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Notes
-- [ ] Notebooks for organizing notes
-- [ ] Tags
-- [ ] Rich Text Editing
-- [ ] Infinite Scroll
 - [ ] Production README
+- [ ] Song CRUD
+- [ ] Persistent play bar
+- [ ] Users Page
+- [ ] Comments
 
 ## Design Docs
 
