@@ -13,6 +13,7 @@
 - `GET api/users` : gets all users
 - `POST api/users` : creates new user
 - `PATCH api/users` : edits user info
+- `GET api/users/:id` : gets user info
 
 ### Session
 
