@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6}, allow_nil: true
 
   after_initialize :ensure_session_token
-  before_validation: :ensure_unique_token
+  before_validation :ensure_unique_token
 
   attr_reader :password
 
@@ -19,7 +19,7 @@ class User < ApplicationRecord
     @password = password
   end
 
-  def password_is?(given_password)
+  def is_password?(given_password)
     BCrypt::Password.new(self.password_digest).is_password?(given_password)
   end
 
