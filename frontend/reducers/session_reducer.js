@@ -22,7 +22,8 @@ const SessionReducer = function(state = _nullUser, action){
     case RECEIVE_LOGOUT_SUCCESS:
       return merge({}, _nullUser);
     case RECEIVE_ERRORS:
-      const errors = {errors: action.errors};
+    debugger;
+      const errors = action.errors;
       return merge({}, state, errors);
     case CLEAR_ERRORS:
       return {
