@@ -17,7 +17,7 @@ const modalStyle = {
     position        : 'fixed',
     margin          : 'auto',
     width           : '280px',
-    height          : '240px',
+    height          : '280px',
     border          : '1px solid #ccc',
     padding         : '20px',
     zIndex          : 11,
