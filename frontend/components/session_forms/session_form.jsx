@@ -75,6 +75,12 @@ class SessionForm extends React.Component {
 											"Sign Up"}
 									</span>
 								</button>
+								<button
+									onClick={this.props.demoLogin}>
+									<span>
+										Demo
+									</span>
+								</button>
 						</div>
 				</div>
 			</div>
