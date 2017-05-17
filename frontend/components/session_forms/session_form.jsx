@@ -38,26 +38,24 @@ class SessionForm extends React.Component {
 		return (
 			<div>
 				<div className="login-form-container">
-
-						<br />
-						<br />
+						<p className="form-title">
+							ChillCloud
+						</p>
 						<div className="login-form">
 							<br />
-								<br />
 								<input type="text"
 									value={this.state.username}
 									onChange={this.update("username")}
 									className="login-input" />
-								<label> Username:
+								<label className="form-text"> Username:
 							</label>
 
 							<br />
-								<br />
 								<input type="password"
 									value={this.state.password}
 									onChange={this.update("password")}
 									className="login-input" />
-								<label> Password:
+								<label className="form-text"> Password:
 							</label>
 							<div>
 								{ this.renderErrors() }

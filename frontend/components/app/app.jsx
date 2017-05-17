@@ -11,6 +11,13 @@ const App = ({current_user}) => {
     <div>
       <header>
         <NavContainer />
+          <div className="splash-image">
+            <div className="splash">
+              <img src="assets/splash_image.jpeg" />
+              <p className="imageTitle">ChillCloud</p>
+              <p className="image-caption">listen & chill</p>
+            </div>
+          </div>
       </header>
     </div>
   );

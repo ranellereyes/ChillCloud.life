@@ -16,11 +16,12 @@ const modalStyle = {
   content : {
     position        : 'fixed',
     margin          : 'auto',
-    width           : '250px',
-    height          : '220px',
+    width           : '280px',
+    height          : '240px',
     border          : '1px solid #ccc',
     padding         : '20px',
-    zIndex          : 11
+    zIndex          : 11,
+    backgroundColor : '#e2e2e2'
   }
 };
 
@@ -49,6 +50,7 @@ class Nav extends React.Component {
     const loggedInNav = (
       <div className="nav-par">
         <div className="left-nav-btns">
+          <div className="title">ChillCloud</div>
           <Link to="/">
             <button>
               <span>
@@ -83,8 +85,8 @@ class Nav extends React.Component {
 
     const loginNav = (
       <div className="nav-par">
-        <div>
-          ''
+        <div className="title">
+          ChillCloud
         </div>
         <div className="right-nav-btns">
           <Modal
