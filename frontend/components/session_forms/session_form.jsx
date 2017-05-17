@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
 		this.state = {
 			username: "",
 			password: "",
+			errors: this.props.errors,
 			type: this.props.type
 		};
 	}
@@ -17,6 +18,7 @@ class SessionForm extends React.Component {
 	_handleSubmit(type){
 		return () => {
 			const user = this.state;
+			this.setState({errors: []});
 			this.props.processForm(user, type);
 		};
 	}
@@ -31,6 +33,10 @@ class SessionForm extends React.Component {
 				))}
 			</ul>
 		);
+	}
+
+	componentWillUnmount() {
+		this.props.errorClear();
 	}
 
 	render() {
