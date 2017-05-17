@@ -5,7 +5,8 @@ class SessionForm extends React.Component {
 		super(props);
 		this.state = {
 			username: "",
-			password: ""
+			password: "",
+			type: this.props.type
 		};
 	}
 
@@ -22,7 +23,7 @@ class SessionForm extends React.Component {
 
 	renderErrors(){
 		return(
-			<ul>
+			<ul className='errors'>
 				{this.props.errors.map( (error, i) => (
 					<li key={`error-${i}`}>
 						{error}
@@ -42,31 +43,34 @@ class SessionForm extends React.Component {
 						<br />
 						<div className="login-form">
 							<br />
-							<label> Username:
+								<br />
 								<input type="text"
 									value={this.state.username}
 									onChange={this.update("username")}
 									className="login-input" />
+								<label> Username:
 							</label>
 
 							<br />
-							<label> Password:
+								<br />
 								<input type="password"
 									value={this.state.password}
 									onChange={this.update("password")}
 									className="login-input" />
+								<label> Password:
 							</label>
-							<div className="errors">
+							<div>
 								{ this.renderErrors() }
 							</div>
-
 							<br />
-							<button onClick={this._handleSubmit('login')}>
-								Log In
-							</button>
-							<button onClick={this._handleSubmit('signup')}>
-								Sign Up
-							</button>
+								<button
+									onClick={this._handleSubmit(this.state.type)}>
+									<span>
+										{this.state.type === 'login' ?
+											"Log In" :
+											"Sign Up"}
+									</span>
+								</button>
 						</div>
 				</div>
 			</div>
@@ -74,5 +78,12 @@ class SessionForm extends React.Component {
 	}
 
 }
+
+// <button onClick={this._handleSubmit('login')}>
+// 	Log In
+// </button>
+// <button onClick={this._handleSubmit('signup')}>
+// 	Sign Up
+// </button>
 
 export default SessionForm;

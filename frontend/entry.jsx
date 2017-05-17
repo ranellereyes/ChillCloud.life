@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+import Modal from 'react-modal';
 
 // TESTING
 import * as Sesh from './actions/session_actions';
@@ -20,5 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.store = store;
     window.test = Sesh;
+    Modal.setAppElement(document.body);
     ReactDOM.render(<Root store={store}/>, root);
 });

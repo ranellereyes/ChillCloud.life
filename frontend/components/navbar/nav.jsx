@@ -1,50 +1,122 @@
 import React from 'react';
 import SessionFormContainer from '../session_forms/session_form_container';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
+
+const modalStyle = {
+  overlay : {
+    position        : 'fixed',
+    top             : 0,
+    left            : 0,
+    right           : 0,
+    bottom          : 0,
+    backgroundColor : 'rgba(0, 0, 0, 0.75)',
+    zIndex          : 10
+  },
+  content : {
+    position        : 'fixed',
+    margin          : 'auto',
+    width           : '250px',
+    height          : '220px',
+    border          : '1px solid #ccc',
+    padding         : '20px',
+    zIndex          : 11
+  }
+};
 
 class Nav extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      modalIsOpen: false,
+      action: ''
+    };
+
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal(action) { return () => {
+     this.setState({modalIsOpen: true, action});
+  };}
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
   }
 
   render () {
-    const leftNav = (
-      <div className="left-nav-btns">
-        <Link to="/">
-          <button>
-            Home
+    const loggedInNav = (
+      <div className="nav-par">
+        <div className="left-nav-btns">
+          <Link to="/">
+            <button>
+              <span>
+                Home
+              </span>
+            </button>
+          </Link>
+          <Link to="/stream">
+            <button>
+              <span>
+                Collection
+              </span>
+            </button>
+          </Link>
+        </div>
+        <div className="right-nav-btns">
+          <Link to="/upload">
+            <button>
+              <span>
+                Upload
+              </span>
+            </button>
+          </Link>
+          <button onClick={this.props.logout}>
+            <span>
+              Logout
+            </span>
           </button>
-        </Link>
-        <Link to="/stream">
-          <button>
-            Collection
-          </button>
-        </Link>
-      </div>
+        </div>
+    </div>
     );
 
     const loginNav = (
-      <div className="right-nav-btns">
-        <SessionFormContainer />
-      </div>
-    );
-
-    const logoutNav = (
-      <div>
-        <Link to="/upload">
-          <button>Upload</button>
-        </Link>
-        <button onClick={this.props.logout}>
-          Logout
-        </button>
+      <div className="nav-par">
+        <div>
+          ''
+        </div>
+        <div className="right-nav-btns">
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            contentLabel="form"
+            onRequestClose={this.closeModal}
+            style={modalStyle}
+          >
+            <SessionFormContainer type={this.state.action} />
+          </Modal>
+          <button
+            onClick={this.openModal('login')}
+          >
+            <span>
+              Log In
+            </span>
+          </button>
+          <button
+            onClick={this.openModal('signup')}
+          >
+            <span>
+              Sign Up
+            </span>
+          </button>
+        </div>
       </div>
     );
 
     return (
-      <div>
-        {leftNav}
-        {this.props.currentUser ? logoutNav : loginNav}
-      </div>
+      <nav>
+        {this.props.currentUser ? loggedInNav : loginNav}
+      </nav>
     );
   }
 }
