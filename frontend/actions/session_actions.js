@@ -12,9 +12,12 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 // ASYNC ACTIONS
 export const actionSignup = user => dispatch => {
+  debugger;
   return APIUtil.signupRequest(user).then(
     currentUser => dispatch(receiveCurrentUser(currentUser)),
-    error => dispatch(receiveErrors(error.responseJSON))
+    error => {
+      debugger;
+      return dispatch(receiveErrors(error.responseJSON));}
   );
 };
 
