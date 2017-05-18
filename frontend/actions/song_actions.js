@@ -1,26 +1,30 @@
 // API UTIL
 import * as APIUtil from '../util/song_util';
+import {
+  RECEIVE_ERRORS,
+  CLEAR_ERRORS,
+  receiveErrors,
+  clearErrors
+} from './errors_actions';
 
 // CONSTANTS
 
-// EXAMPLES
-// export const LOGIN = "LOGIN";
+export const RECEIVE_SONG = "RECEIVE_SONG";
 
 // ASYNC ACTIONS
-// EXAMPLES
 
-// export const actionSignup = user => dispatch => {
-//   return APIUtil.signupRequest(user).then(
-//     currentUser => dispatch(receiveCurrentUser(currentUser)),
-//     error => {
-//       return dispatch(receiveErrors(error.responseJSON));}
-//   );
-// };
+export const actionGetSong = (song) => dispatch => {
+  return APIUtil.songRequest(song).then(
+    respSong => dispatch(receiveSong(respSong)),
+    error => {
+      return dispatch(receiveErrors(error.responseJSON));
+    }
+  );
+};
 
 // // SYNC ACTIONS
-// EXAMPLES
 
-// export const receiveCurrentUser = currentUser => ({
-//   type: RECEIVE_CURRENT_USER,
-//   currentUser
-// });
+export const receiveSong = (song) => ({
+  type: RECEIVE_SONG,
+  song
+});
