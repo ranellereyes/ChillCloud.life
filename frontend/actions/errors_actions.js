@@ -9,3 +9,7 @@ export const receiveErrors = errors => ({
 export const clearErrors = errors => ({
   type: CLEAR_ERRORS
 });
+
+export const errorHandle = error => {
+  return dispatch(receiveErrors(error.responseJSON));
+};

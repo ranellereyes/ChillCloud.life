@@ -32,7 +32,7 @@ class Api::SongsController < ApplicationController
 	def destroy
 		@song = Song.find_by(id: params[:id])
 		if @song
-      @song.destroy!
+      @song.destroy
 			render "api/users/show"
 		else
 			render(
