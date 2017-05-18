@@ -6,15 +6,7 @@ class Api::SongsController < ApplicationController
 
   def show
     @song = Song.find_by(id: params[:id])
-
-    if @song
-      render 'api/songs/show'
-    else
-      render (
-        json: ["Song not found in database"],
-        status: 404
-      )
-    end
+    render 'api/songs/show'
   end
 
   def edit
@@ -32,10 +24,10 @@ class Api::SongsController < ApplicationController
 
     if @song.save
 			render "api/songs/show"
-		else
+    else
       render json: @song.errors.full_messages, status: 422
-		end
-	end
+    end
+  end
 
 	def destroy
 		@song = Song.find_by(id: params[:id])

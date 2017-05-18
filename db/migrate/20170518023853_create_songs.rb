@@ -11,6 +11,6 @@ class CreateSongs < ActiveRecord::Migration[5.0]
     end
 
     add_index :songs, :title, unique: true
-    add_index :songs, :user_id, unique: true
+    add_index :songs, :user_id
   end
 end

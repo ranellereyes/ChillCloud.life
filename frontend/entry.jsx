@@ -5,7 +5,7 @@ import Root from './components/root';
 import Modal from 'react-modal';
 
 // TESTING
-import * as Test from './util/session_api_util';
+import * as Test from './util/song_util';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');

@@ -16,7 +16,7 @@ export const newSongRequest = (song) => (
 export const songRequest = (song) => (
   $.ajax({
     method: 'GET',
-    url: `/api/song/${song.id}`,
+    url: `/api/songs/${song.id}`,
     data: {song}
   })
 );
@@ -24,7 +24,7 @@ export const songRequest = (song) => (
 export const editSongRequest = (song) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/song/${song.id}`,
+    url: `/api/songs/${song.id}`,
     data: {song}
   })
 );
@@ -32,6 +32,6 @@ export const editSongRequest = (song) => (
 export const deleteSongRequest = (song) => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/song/${song.id}`
+    url: `/api/songs/${song.id}`
   })
 );

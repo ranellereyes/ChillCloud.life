@@ -11,8 +11,7 @@ import merge from 'lodash/merge';
 const _defaultSong = {
   image_url: 'http://i.imgur.com/l7TtZHS.jpg',
   genre: '',
-  length: '',
-  waveform: ''
+  length: ''
 };
 
 const SongReducer = function(state = _defaultSong, action){
@@ -26,4 +25,4 @@ const SongReducer = function(state = _defaultSong, action){
   }
 };
 
-export default SessionReducer;
+export default SongReducer;
