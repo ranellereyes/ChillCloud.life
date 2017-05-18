@@ -1,7 +1,7 @@
 ```
 {
   session: {
-    current_user: {
+    currentUser: {
       id: 1,
       username: 'Nujabes',
       profile_pic: 'cloudinary.com/user1'

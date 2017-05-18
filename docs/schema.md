@@ -16,10 +16,10 @@ column name | data type | details
 ------------|-----------|--------
 id | integer | not null, primary key
 title | string | not null, indexed, unique
-artist_id | integer | not null, indexed, foreign key
+user_id | integer | not null, indexed, foreign key
 image_url | string |
 genre | string |
-song_source | string | not null, unique
+source | string | not null, unique
 waveform | string |
 
 ## comments
