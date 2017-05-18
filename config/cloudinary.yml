@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: ranellybelly
+  api_key: '612959394273696'
+  api_secret: 1kULQuaT_kJJ7qTUsAfYAIg8wrk
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: ranellybelly
+  api_key: '612959394273696'
+  api_secret: 1kULQuaT_kJJ7qTUsAfYAIg8wrk
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: ranellybelly
+  api_key: '612959394273696'
+  api_secret: 1kULQuaT_kJJ7qTUsAfYAIg8wrk
+  enhance_image_tag: true
+  static_image_support: false
