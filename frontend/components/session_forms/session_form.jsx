@@ -18,7 +18,7 @@ class SessionForm extends React.Component {
 	_handleSubmit(type){
 		return () => {
 			const user = this.state;
-			this.setState({errors: []});
+			// this.setState({errors: []});
 			this.props.processForm(user, type);
 		};
 	}
