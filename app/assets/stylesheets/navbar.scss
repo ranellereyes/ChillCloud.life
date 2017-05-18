@@ -33,12 +33,16 @@ input {
 }
 
 .splash-image {
-  position: relative;
-  width: 100%;
-  height: auto;
+  // position: relative;
+  // width: 100%;
+  // height: auto;
   z-index: 1;
 
   .splash-text {
+    background-image: image-url('splash_image.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     padding-bottom: 90px;
     justify-content: center;
     align-items: center;
