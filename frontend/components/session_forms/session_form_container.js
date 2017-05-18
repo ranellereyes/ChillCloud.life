@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
-import { actionLogin, actionSignup, clearErrors } from '../../actions/session_actions';
+import { actionLogin, actionSignup } from '../../actions/session_actions';
+import { clearErrors } from '../../actions/errors_actions';
 import React from 'react';
 import { Redirect } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => ({
-  errors: state.session.errors,
+  errors: state.errors,
   type: ownProps.type,
   closeModal: ownProps.closeModal
 });

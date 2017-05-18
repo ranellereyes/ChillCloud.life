@@ -6,10 +6,8 @@ class SessionForm extends React.Component {
 		this.state = {
 			username: "",
 			password: "",
-			errors: this.props.errors,
 			type: this.props.type
 		};
-		debugger;
 	}
 
 	update(field){
