@@ -6,6 +6,8 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   before_validation :ensure_unique_token
 
+  has_many :songs
+
   attr_reader :password
 
   def self.find_by_credentials(username, password)

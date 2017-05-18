@@ -35,7 +35,7 @@ export const usersRequest = () => (
 export const userRequest = user => (
   $.ajax({
     method: 'GET',
-    url: '/api/users/:id',
+    url: `/api/users/${user.id}`,
     data: {user}
   })
 );
@@ -43,7 +43,7 @@ export const userRequest = user => (
 export const editUserRequest = user => (
   $.ajax({
     method: 'PATCH',
-    url: '/api/users/:id/edit',
+    url: `/api/users/${user.id}/edit`,
     data: {user}
   })
 );

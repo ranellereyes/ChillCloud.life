@@ -5,7 +5,7 @@ import Root from './components/root';
 import Modal from 'react-modal';
 
 // TESTING
-import * as Sesh from './actions/session_actions';
+import * as Test from './util/session_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.store = store;
-    window.test = Sesh;
+    window.test = Test;
     Modal.setAppElement(document.body);
     ReactDOM.render(<Root store={store}/>, root);
 });
