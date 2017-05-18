@@ -95,7 +95,9 @@ class Nav extends React.Component {
             onRequestClose={this.closeModal}
             style={modalStyle}
           >
-            <SessionFormContainer type={this.state.action} />
+            <SessionFormContainer
+              type={this.state.action}
+              closeModal={this.closeModal} />
           </Modal>
           <button
             onClick={this.openModal('login')}

@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
 			errors: this.props.errors,
 			type: this.props.type
 		};
+		debugger;
 	}
 
 	update(field){
@@ -36,6 +37,7 @@ class SessionForm extends React.Component {
 	}
 
 	componentWillUnmount() {
+		this.props.closeModal();
 		this.props.errorClear();
 	}
 

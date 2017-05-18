@@ -6,7 +6,8 @@ import { Redirect } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => ({
   errors: state.session.errors,
-  type: ownProps.type
+  type: ownProps.type,
+  closeModal: ownProps.closeModal
 });
 
 const mapDispatchToProps = dispatch => {
