@@ -34,7 +34,7 @@ gem "figaro"
 gem "cloudinary"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem "paperclip"
 # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 # Gemfile
 group :development, :test do

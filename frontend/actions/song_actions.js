@@ -32,12 +32,12 @@ export const actionSongIndex = () => dispatch => {
   );
 };
 
-// export const actionNewSong = (song) => dispatch => {
-//   return APIUtil.newSongRequest(song).then(
-//     resp => dispatch(createNewSong(resp)),
-//     errorHandle
-//   );
-// };
+export const actionNewSong = (song) => dispatch => {
+  return APIUtil.newSongRequest(song).then(
+    resp => dispatch(receiveSong(resp)),
+    errorHandle
+  );
+};
 //
 // export const actionDeleteSong = (song) => dispatch => {
 //   return APIUtil.deleteSongRequest(song).then(
@@ -64,7 +64,7 @@ export const receiveSong = (song) => ({
   type: RECEIVE_SONG,
   song
 });
-// 
+//
 // export const createNewSong = (song) => ({
 //   type: CREATE_NEW_SONG,
 //   song

@@ -38,9 +38,11 @@ class Nav extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  openModal(action) { return () => {
-     this.setState({modalIsOpen: true, action});
-  };}
+  openModal(action) {
+    return () => {
+      this.setState({modalIsOpen: true, action});
+    };
+  }
 
   closeModal() {
     this.setState({modalIsOpen: false});

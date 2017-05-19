@@ -6,6 +6,6 @@ class Song < ApplicationRecord
   belongs_to :user
 
   def defaults
-    self.image_url ||= 'http://i.imgur.com/l7TtZHS.jpg'
+    self.image_url ||= 'https://s3-us-west-1.amazonaws.com/chillcloud-dev/albumDefault.png'
   end
 end
