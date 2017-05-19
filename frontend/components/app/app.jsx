@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import NavContainer from '../navbar/nav_container';
 import Splash from "../splash/splash";
 import Stream from "../stream/stream";
+import SongDetailListContainer from "../songs/song_detail_list_container";
 // TEST
 import {AuthRoute, ProtectedRoute} from '../../util/route_util';
 import GreetingContainer from '../greeting/greeting_container';
@@ -14,7 +15,7 @@ const App = ({current_user}) => {
       <header>
         <NavContainer />
         <AuthRoute exact path="/" component={Splash} />
-        <ProtectedRoute path="/stream" component={Stream} />
+        <ProtectedRoute path="/stream" component={SongDetailListContainer} />
       </header>
     </div>
   );

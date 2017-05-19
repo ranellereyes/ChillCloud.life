@@ -1,9 +1,8 @@
 import {
   RECEIVE_SONG,
-  RECEIVE_SONGS,
-  CREATE_NEW_SONG,
-  DELETE_SONG,
-  EDIT_SONG
+  RECEIVE_SONGS
+  // DELETE_SONG,
+  // EDIT_SONG
 } from '../actions/song_actions';
 import {
   RECEIVE_ERRORS,
@@ -12,22 +11,18 @@ import {
 
 import merge from 'lodash/merge';
 
-const _defaultSong = {
-  image_url: 'http://i.imgur.com/l7TtZHS.jpg',
-  genre: '',
-  length: ''
-};
+// const _defaultSong = {
+//   image_url: 'http://i.imgur.com/l7TtZHS.jpg',
+//   genre: '',
+//   length: ''
+// };
 
-const SongReducer = function(state = _defaultSong, action){
+const SongReducer = function(state = {}, action){
   switch(action.type){
     case RECEIVE_SONG:
-      return {
-        song: merge({}, state, action.song)
-      };
+      return merge({}, state, {[action.song.id]: action.song});
     case RECEIVE_SONGS:
-      return {
-        song: merge({}, state, action.song)
-      };
+      return merge({}, state, action.song);
     default:
       return state;
   }
