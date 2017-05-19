@@ -32,9 +32,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "figaro"
 gem "cloudinary"
+gem 'aws-sdk', '>= 2.0'
+gem "paperclip", "~> 5.0.0"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "paperclip"
 # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 # Gemfile
 group :development, :test do
