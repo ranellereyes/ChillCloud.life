@@ -47,14 +47,16 @@ class Nav extends React.Component {
   }
 
   render () {
+    const user = this.props.currentUser || null;
+
     const loggedInNav = (
       <div className="nav-par">
         <div className="left-nav-btns">
           <div className="title">ChillCloud</div>
-          <Link to="/">
+          <Link to="/upload">
             <button>
               <span>
-                Home
+                Upload
               </span>
             </button>
           </Link>
@@ -67,13 +69,10 @@ class Nav extends React.Component {
           </Link>
         </div>
         <div className="right-nav-btns">
-          <Link to="/upload">
-            <button>
-              <span>
-                Upload
-              </span>
-            </button>
-          </Link>
+          <p
+            className="form-text">
+              Hi {user ? user.username : ''}
+          </p>
           <button onClick={this.props.logout}>
             <span>
               Logout

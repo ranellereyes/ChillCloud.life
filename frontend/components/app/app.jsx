@@ -11,12 +11,14 @@ import GreetingContainer from '../greeting/greeting_container';
 
 const App = ({current_user}) => {
   return (
-    <div>
+    <div className="App">
       <header>
         <NavContainer />
-        <AuthRoute exact path="/" component={Splash} />
-        <ProtectedRoute path="/stream" component={SongDetailListContainer} />
       </header>
+      <main>
+        <AuthRoute exact path="/" component={Splash} />
+        <ProtectedRoute path="/stream" component={Stream} />
+      </main>
     </div>
   );
 };

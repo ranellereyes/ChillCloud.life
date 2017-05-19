@@ -1,0 +1,18 @@
+$lightest-gray: #f7f7f5;
+$alice-blue: #f9f9f9;
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: inherit;
+  margin: inherit;
+}
+
+main {
+  display: flex;
+  margin-top: 36px;
+  background-color: $alice-blue;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import SongItem from './song_item';
 
 class SongDetailList extends React.Component {
   constructor(props) {
@@ -13,9 +14,9 @@ class SongDetailList extends React.Component {
     const songs = this.props.songs;
 
     return (
-      <ul>Hi!
+      <ul className="stream-list">Hi!
         {Object.keys(songs).map((key) => (
-          <li key={`song-${key}`}>{songs[key].title}</li>
+          <SongItem song={songs[key]} />
         ))}
       </ul>
     );

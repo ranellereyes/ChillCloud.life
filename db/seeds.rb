@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+
+nujabes = User.new(username: 'Nujabes', password: 'password')
+nujabes.save
+
+Song.destroy_all
+
+Song.create!(title: 'Feather', user_id: nujabes.id, source: 'fake.source/1')
+Song.create!(title: 'Reflection Eternal', user_id: nujabes.id, source: 'fake.source/2')
+Song.create!(title: 'Modal Soul', user_id: nujabes.id, source: 'fake.source/3')

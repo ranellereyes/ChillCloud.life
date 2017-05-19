@@ -11,12 +11,21 @@ $dark-blue: #4d7b9f;
 $darkest-blue: #265e8b;
 
 header {
+  background-color: $gray;
   font: Sans-Serif;
   width: 100%;
   display: flex;
   flex-direction: column;;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: 36px;
+  position: fixed;
+}
+
+nav {
+  width: inherit;
+  height: inherit;
 }
 
 input {
@@ -30,48 +39,6 @@ input {
     border-color: rgba(0,0,0,.15);
     background-color: beige;
     font-size: 16px;
-}
-
-.splash-image {
-  // position: relative;
-  // width: 100%;
-  // height: auto;
-  z-index: 1;
-
-  .splash-text {
-    background-image: url('http://i.imgur.com/vYJ5mZ0.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-bottom: 90px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-    text-shadow: 4px 4px $shadow;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    h1 {
-      font-size: 100px;
-      font-weight: lighter;
-      text-shadow: 4px 4px $shadow;
-      border-bottom: 4px solid white;
-      border-style: groove white;
-    }
-
-    p {
-      font-family: 'Kaushan Script', cursive;
-      text-shadow: 2px 2px $shadow;
-      text-transform: full-width;
-      margin-top: 15px;
-      font-size: 20px;
-    }
-  }
 }
 
 .title {
@@ -122,17 +89,22 @@ input {
 
 .nav-par {
   z-index: 9;
-  background-color: $gray;
   opacity: 0.9;
-  width: inherit;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 36px;
-  position: fixed;
+  height: inherit;
 }
 
 .right-nav-btns {
+  display: flex;
+  align-content: center;
+
+  p {
+    font-family: 'Monsterrat', sans-serif;
+    color: white;
+    text-shadow: 1px 1px $dark-gray;
+  }
 }
 
 .left-nav-btns {
@@ -156,8 +128,47 @@ button {
       margin-left: 7.5px;
 }
 
-nav {
-  width: inherit;
+
+.splash-image {
+  // position: relative;
+  // width: 100%;
+  // height: auto;
+  z-index: 1;
+
+  .splash-text {
+    background-image: url('http://i.imgur.com/vYJ5mZ0.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 90px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    text-shadow: 4px 4px $shadow;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    h1 {
+      font-size: 100px;
+      font-weight: lighter;
+      text-shadow: 4px 4px $shadow;
+      border-bottom: 4px solid white;
+      border-style: groove white;
+    }
+
+    p {
+      font-family: 'Kaushan Script', cursive;
+      text-shadow: 2px 2px $shadow;
+      text-transform: full-width;
+      margin-top: 15px;
+      font-size: 20px;
+    }
+  }
 }
 
   button {
