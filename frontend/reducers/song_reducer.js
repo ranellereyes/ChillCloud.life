@@ -20,7 +20,6 @@ import merge from 'lodash/merge';
 const SongReducer = function(state = {}, action){
   switch(action.type){
     case RECEIVE_SONG:
-    debugger;
       return action.song;
     case RECEIVE_SONGS:
       return action.song;

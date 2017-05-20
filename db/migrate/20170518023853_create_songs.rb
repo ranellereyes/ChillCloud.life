@@ -3,9 +3,8 @@ class CreateSongs < ActiveRecord::Migration[5.0]
     create_table :songs do |t|
       t.string :title, null: false, unique: true
       t.integer :user_id, null: false
-      t.string :image_url
+      t.string :image
       t.string :genre
-      t.string :source, null: false, unique: true
       t.string :length
       t.timestamps
     end

@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20170519210841) do
     t.integer  "user_id",                null: false
     t.string   "image_url"
     t.string   "genre"
-    t.string   "source",                 null: false
     t.string   "length"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -47,7 +46,7 @@ ActiveRecord::Schema.define(version: 20170519210841) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.index ["session_token"], name: "index_users_on_session_token", using: :btree
-    t.index ["username"], name: "index_users_on_username", using: :btree
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
 end
