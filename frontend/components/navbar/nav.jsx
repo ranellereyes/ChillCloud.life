@@ -1,9 +1,11 @@
 import React from 'react';
 import SessionFormContainer from '../session_forms/session_form_container';
+import UploadFormContainer from '../upload_forms/upload_form_container';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 
-const modalStyle = {
+
+const modalSplashStyle = {
   overlay : {
     position        : 'fixed',
     top             : 0,
@@ -25,27 +27,60 @@ const modalStyle = {
   }
 };
 
+const modalUploadStyle = {
+  overlay : {
+    position        : 'fixed',
+    top             : 0,
+    left            : 0,
+    right           : 0,
+    bottom          : 0,
+    backgroundColor : 'rgba(0, 0, 0, 0.75)',
+    zIndex          : 10
+  },
+  content : {
+    position        : 'fixed',
+    margin          : 'auto',
+    width           : '70vh',
+    height          : '65vh',
+    border          : '1px solid #ccc',
+    padding         : '20px',
+    zIndex          : 11,
+    backgroundColor : '#e2e2e2'
+  }
+};
+
 class Nav extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      modalIsOpen: false,
+      userFormIsOpen: false,
+      uploadFormIsOpen: false,
       action: ''
     };
 
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.openUserForm = this.openUserForm.bind(this);
+    this.closeUserForm = this.closeUserForm.bind(this);
+    this.openUploadForm = this.openUploadForm.bind(this);
+    this.closeUploadForm = this.closeUploadForm.bind(this);
   }
 
-  openModal(action) {
+  openUploadForm () {
+    this.setState({uploadFormIsOpen: true});
+  }
+
+  closeUploadForm () {
+    this.setState({uploadFormIsOpen: false});
+  }
+
+  openUserForm(action) {
     return () => {
-      this.setState({modalIsOpen: true, action});
+      this.setState({userFormIsOpen: true, action});
     };
   }
 
-  closeModal() {
-    this.setState({modalIsOpen: false});
+  closeUserForm() {
+    this.setState({userFormIsOpen: false});
   }
 
   render () {
@@ -55,13 +90,20 @@ class Nav extends React.Component {
       <div className="nav-par">
         <div className="left-nav-btns">
           <div className="title">ChillCloud</div>
-          <Link to="/upload">
-            <button>
+            <Modal
+              isOpen={this.state.uploadFormIsOpen}
+              contentLabel="form"
+              onRequestClose={this.closeUploadForm}
+              style={modalUploadStyle}
+            >
+              <UploadFormContainer
+                closeModal={this.closeUploadForm} />
+            </Modal>
+            <button onClick={this.openUploadForm}>
               <span>
                 Upload
               </span>
             </button>
-          </Link>
           <Link to="/stream">
             <button>
               <span>
@@ -91,24 +133,24 @@ class Nav extends React.Component {
         </div>
         <div className="right-nav-btns">
           <Modal
-            isOpen={this.state.modalIsOpen}
+            isOpen={this.state.userFormIsOpen}
             contentLabel="form"
-            onRequestClose={this.closeModal}
-            style={modalStyle}
+            onRequestClose={this.closeUserForm}
+            style={modalSplashStyle}
           >
             <SessionFormContainer
               type={this.state.action}
-              closeModal={this.closeModal} />
+              closeModal={this.closeUserForm} />
           </Modal>
           <button
-            onClick={this.openModal('login')}
+            onClick={this.openUserForm('login')}
           >
             <span>
               Log In
             </span>
           </button>
           <button
-            onClick={this.openModal('signup')}
+            onClick={this.openUserForm('signup')}
           >
             <span>
               Sign Up
