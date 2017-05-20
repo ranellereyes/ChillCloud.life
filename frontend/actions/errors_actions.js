@@ -10,6 +10,6 @@ export const clearErrors = errors => ({
   type: CLEAR_ERRORS
 });
 
-export const errorHandle = error => {
+export const errorHandle = (error, dispatch) => {
   return dispatch(receiveErrors(error.responseJSON));
 };

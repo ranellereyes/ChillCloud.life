@@ -6,17 +6,21 @@ class SongDetailList extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.getAllSongs();
   }
 
   render () {
     const songs = this.props.songs;
 
+    if (Object.keys(songs)[0] === "id") { return null; }
+
     return (
       <ul className="stream-list">Hi!
         {Object.keys(songs).map((key) => (
-          <SongItem song={songs[key]} />
+          <li key={`song-${key}`}>
+            <SongItem song={songs[key]} />
+          </li>
         ))}
       </ul>
     );

@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
 import {
-  actionSongIndex
+  actionGetSong
  } from '../../actions/song_actions';
-import SongDetailList from './song_detail_list';
+import SongView from './song_view';
 
 const mapStateToProps = state => ({
   songs: state.songs
 });
+
 const mapDispatchToProps = dispatch => ({
-  getAllSongs: () => dispatch(actionSongIndex())
+  getSong: (id) => dispatch(actionGetSong(id))
 });
 
 export default connect(
  mapStateToProps,
  mapDispatchToProps
-)(SongDetailList);
+)(SongView);

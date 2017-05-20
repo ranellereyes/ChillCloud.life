@@ -18,24 +18,24 @@ export const RECEIVE_SONGS = "RECEIVE_SONGS";
 
 // ASYNC ACTIONS
 
-export const actionGetSong = (song) => dispatch => {
-  return APIUtil.songRequest(song).then(
+export const actionGetSong = (id) => dispatch => {
+  return APIUtil.songRequest(id).then(
     respSong => dispatch(receiveSong(respSong)),
-    errorHandle
+    e => errorHandle(e, dispatch)
   );
 };
 
 export const actionSongIndex = () => dispatch => {
   return APIUtil.songsRequest().then(
     resp => dispatch(receiveSongs(resp)),
-    errorHandle
+    e => errorHandle(e, dispatch)
   );
 };
 
 export const actionNewSong = (song) => dispatch => {
   return APIUtil.newSongRequest(song).then(
     resp => dispatch(receiveSong(resp)),
-    errorHandle
+    e => errorHandle(e, dispatch)
   );
 };
 //

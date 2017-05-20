@@ -13,11 +13,10 @@ export const newSongRequest = (song) => (
   })
 );
 
-export const songRequest = (song) => (
+export const songRequest = (id) => (
   $.ajax({
     method: 'GET',
-    url: `/api/songs/${song.id}`,
-    data: {song}
+    url: `/api/songs/${id}`
   })
 );
 

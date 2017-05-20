@@ -5,8 +5,9 @@ import NavContainer from '../navbar/nav_container';
 import Splash from "../splash/splash";
 import Stream from "../stream/stream";
 import SongDetailListContainer from "../songs/song_detail_list_container";
-// TEST
+import SongViewContainer from "../songs/song_view_container";
 import {AuthRoute, ProtectedRoute} from '../../util/route_util';
+// TEST
 import GreetingContainer from '../greeting/greeting_container';
 
 const App = ({current_user}) => {
@@ -16,17 +17,14 @@ const App = ({current_user}) => {
         <NavContainer />
       </header>
       <main>
-        <AuthRoute exact path="/" component={Splash} />
-        <ProtectedRoute path="/stream" component={Stream} />
+        <Switch>
+          <AuthRoute exact path="/" component={Splash} />
+          <ProtectedRoute path="/stream" component={Stream} />
+          <ProtectedRoute path="/songs/:song_id" component={SongViewContainer} />
+        </Switch>
       </main>
     </div>
   );
 };
-
-// TESTING
-// <Switch>
-//   <AuthRoute path="/login" component={SessionForm} />
-//   <ProtectedRoute path="/" component={GreetingContainer} />
-// </Switch>
 
 export default App;
