@@ -13,6 +13,7 @@ class UploadForm extends React.Component {
 	}
 
 	update(field){
+    // NEED REFACTORING: 
     // if (field === "source" || field === "image_url") {
     //   return e => {
     //     debugger;

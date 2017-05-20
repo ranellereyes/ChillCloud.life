@@ -10,6 +10,7 @@
 - Search Container
   - Search List Items
 - Auth Container
+- Upload Container
 
 ### Auth Container
 
@@ -27,6 +28,7 @@
 
 ### UsersView
 
+- Update Form
 - Song Detail List Container
 - Side Bar Container
 
@@ -51,4 +53,3 @@ path | Component
 /stream | Stream
 /users/:id | UsersView
 /songs/:id | SongView
-/upload | Upload
