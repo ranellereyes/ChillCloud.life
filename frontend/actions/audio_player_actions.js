@@ -1,9 +1,10 @@
 import * as APIUtil from '../util/song_util';
+import { errorHandle } from './errors_actions';
 
 export const PLAY_SONG = "PLAY_SONG";
 export const PAUSE_SONG = "PAUSE_SONG";
 
-export const receiveSong = (song) => ({
+export const receivePlaySong = (song) => ({
   type: PLAY_SONG,
   song
 });

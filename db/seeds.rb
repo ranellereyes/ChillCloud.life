@@ -10,6 +10,14 @@ User.destroy_all
 
 nujabes = User.new(username: 'Nujabes', password: 'password')
 nujabes.save
+dj = User.new(username: 'DJ Okawari', password: 'password')
+dj.save
+emapea = User.new(username: 'Emapea', password: 'password')
+emapea.save
+nymano = User.new(username: 'Nymano', password: 'password')
+nymano.save
+sfc = User.new(username: 'Songs For Cinema', password: 'password')
+sfc.save
 
 Song.destroy_all
 

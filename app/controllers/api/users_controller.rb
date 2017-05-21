@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.order("RANDOM()").limit(3)
     render "api/users/index"
   end
 
