@@ -23,14 +23,21 @@ header {
   position: fixed;
 }
 
-.loading {
-  background:  url(https://media.tenor.co/images/e3bcbfda3b9034a7792350e7976b9f68/tenor.gif) no-repeat center center fixed;
-  background-size: cover;
+.background {
   width: 100vw;
   height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  z-index: 24;
+  position: fixed;
+}
+
+.loading {
+  background-size: cover;
+  width: 70vw;
+  height: 50vh;
   z-index: 25;
   margin: 0 auto;
-  position: absolute;
   text-align: center;
   font-size: 50px;
   font-family: 'Kaushan Script', cursive;

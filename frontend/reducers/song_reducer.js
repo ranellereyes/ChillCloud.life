@@ -18,7 +18,6 @@ import merge from 'lodash/merge';
 // };
 
 const SongReducer = function(state = {}, action){
-  debugger;
   switch(action.type){
     case REDIRECT:
       return { redirect: action.song.id };

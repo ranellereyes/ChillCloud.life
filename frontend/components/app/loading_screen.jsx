@@ -2,8 +2,11 @@ import React from 'react';
 
 const LoadingScreen = ({loading}) => (
   loading ? (
-    <div className="loading">
-      Loading...
+    <div className="background">
+      <label className="loading">
+        <img src="http://i.imgur.com/Zl83lfn.gif" className="loading" />
+          Loading...
+      </label>
     </div>
   ) : null
 );

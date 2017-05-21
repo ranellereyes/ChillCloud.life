@@ -22,7 +22,6 @@ class UploadForm extends React.Component {
 	}
 
 	componentDidUpdate() {
-		debugger;
 		if (this.props.songs.redirect) {
 			this.props.closeModal();
 			this.props.history.push(`/songs/${this.props.songs.redirect}`);
@@ -30,8 +29,7 @@ class UploadForm extends React.Component {
 	}
 
 	update(field){
-    // NEED REFACTORING:
-    if (field === "source" || field === "image_url") {
+    if (["source", "image_url"].includes(field)) {
       return e => {
         var fileReader = new FileReader();
         const file = e.currentTarget.files[0];
@@ -41,9 +39,9 @@ class UploadForm extends React.Component {
 
         if (file) { fileReader.readAsDataURL(file); }
       };
-    }
-		
-		return e => { this.setState({[field]: e.currentTarget.value }); };
+    } else {
+			return e => this.setState({[field]: e.currentTarget.value });
+		}
 	}
 
 	handleSubmit(){
@@ -74,52 +72,53 @@ class UploadForm extends React.Component {
 		return (
 			<div>
 				<div className="login-form-container">
-						<p className="form-title">
-							ChillCloud
-						</p>
-						<div className="login-form">
-							<br />
-								<input type="text"
-									value={this.state.title}
-									onChange={this.update("title")}
-									className="login-input" />
-                <label className="form-text"> Title:
-							</label>
+					<p className="form-title">
+						ChillCloud
+					</p>
+					<div className="login-form">
+						<br />
+							<input type="text"
+								value={this.state.title}
+								onChange={this.update("title")}
+								className="login-input" />
+              <label className="form-text"> Title:
+						</label>
 
-							<br />
-								<input type="text"
-									value={this.state.genre}
-									onChange={this.update("genre")}
-									className="login-input" />
-                <label className="form-text"> Genre:
-							</label>
+						<br />
+							<input type="text"
+								value={this.state.genre}
+								onChange={this.update("genre")}
+								className="login-input" />
+              <label className="form-text"> Genre:
+						</label>
 
-              <br />
-                <input type="file"
-                  onChange={this.update("source")}
-                  className="login-input" />
-                <label className="form-text">
-                  Music File
-                </label>
+            <br />
+              <input type="file"
+                onChange={this.update("source")}
+                className="login-input" />
+              <label className="form-text">
+                Music File
+              </label>
 
-              <br />
-                <input type="file"
-                  onChange={this.update("image_url")}
-                  className="login-input" />
-                <label className="form-text">
-                  Cover Image
-                </label>
-							<div>
-								{ this.renderErrors() }
-							</div>
-							<br />
-								<button
-									onClick={this.handleSubmit}>
-									<span>
-										Upload!
-									</span>
-								</button>
+            <br />
+              <input type="file"
+                onChange={this.update("image_url")}
+                className="login-input" />
+              <label className="form-text">
+                Cover Image
+              </label>
+						<div>
+							{ this.renderErrors() }
 						</div>
+						<br />
+						
+						<button
+							onClick={this.handleSubmit}>
+							<span>
+								Upload!
+							</span>
+						</button>
+					</div>
 				</div>
 			</div>
 		);
