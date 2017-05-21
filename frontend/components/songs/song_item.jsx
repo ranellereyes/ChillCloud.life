@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 export const SongItem = ({song, key}) => {
   return (
-    <Link to={`/songs/${song.id}`}>
       <div className="song-detail-comp">
         <img src={song.image_url} />
         <div className="second-col">
@@ -14,13 +13,14 @@ export const SongItem = ({song, key}) => {
               <li key={`artist-${song.id}`}>{song.artist}</li>
             </ul>
           </section>
-          <button>
-            Comments!
-          </button>
+            <button>
+              <Link to={`/songs/${song.id}`}>
+                Comments!
+              </Link>
+            </button>
         </div>
         <p>{song.genre}</p>
       </div>
-    </Link>
   );
 };
 

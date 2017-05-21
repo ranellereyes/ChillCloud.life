@@ -13,7 +13,7 @@ class UploadForm extends React.Component {
 	}
 
 	update(field){
-    // NEED REFACTORING: 
+    // NEED REFACTORING:
     // if (field === "source" || field === "image_url") {
     //   return e => {
     //     debugger;
@@ -23,19 +23,20 @@ class UploadForm extends React.Component {
 	}
 
 	_handleSubmit(song){
-	   return () => this.props.actionNewSong(song);
+	  //  return () => this.props.actionNewSong(song);
 	}
 
 	renderErrors(){
-		return(
-			<ul className='errors'>
-				{this.props.errors.map( (error, i) => (
-					<li key={`error-${i}`}>
-						{error}
-					</li>
-				))}
-			</ul>
-		);
+    return (<ul className='errors'>Button disabled while patching...</ul>);
+		// return(
+		// 	<ul className='errors'>
+		// 		{this.props.errors.map( (error, i) => (
+		// 			<li key={`error-${i}`}>
+		// 				{error}
+		// 			</li>
+		// 		))}
+		// 	</ul>
+		// );
 	}
 
 	componentWillUnmount() {
