@@ -7,7 +7,9 @@ class Song < ApplicationRecord
 
   # validates_attachment_content_type :image_url, content_type: /\Aimage\/.*\z/
   validates_attachment_content_type :source, content_type: /\Aaudio\/.*\z/
+  validates_attachment_size :source, :less_than => 20.megabytes
 
+  validates_attachment_size :image_url, :less_than => 2.megabytes
   validates_attachment :image_url,
   content_type: { content_type: ["image/jpeg", "image/png", "image/jpg"]}
 
