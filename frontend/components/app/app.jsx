@@ -7,6 +7,7 @@ import Stream from "../stream/stream";
 import SongDetailListContainer from "../songs/song_detail_list_container";
 import SongViewContainer from "../songs/song_view_container";
 import {AuthRoute, ProtectedRoute} from '../../util/route_util';
+import LoadingContainer from './loading_container';
 // TEST
 import GreetingContainer from '../greeting/greeting_container';
 
@@ -17,6 +18,7 @@ const App = ({current_user}) => {
         <NavContainer />
       </header>
       <main>
+        <LoadingContainer />
         <Switch>
           <AuthRoute exact path="/" component={Splash} />
           <ProtectedRoute path="/stream" component={Stream} />

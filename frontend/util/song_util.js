@@ -1,3 +1,4 @@
+
 export const songsRequest = () => (
   $.ajax({
     method: 'GET',
@@ -5,11 +6,14 @@ export const songsRequest = () => (
   })
 );
 
-export const newSongRequest = (song) => (
+export const newSongRequest = (formData) => (
   $.ajax({
     method: 'POST',
     url: `/api/songs/`,
-    data: {song}
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
   })
 );
 

@@ -12,6 +12,7 @@ import {
 
 export const RECEIVE_SONG = "RECEIVE_SONG";
 export const RECEIVE_SONGS = "RECEIVE_SONGS";
+export const LOADING_SCREEN = "LOADING_SCREEN";
 // export const CREATE_NEW_SONG = "CREATE_NEW_SONG";
 // export const DELETE_SONG = "DELETE_SONG";
 // export const EDIT_SONG = "EDIT_SONG";
@@ -33,6 +34,7 @@ export const actionSongIndex = () => dispatch => {
 };
 
 export const actionNewSong = (song) => dispatch => {
+  dispatch({ type: LOADING_SCREEN });
   return APIUtil.newSongRequest(song).then(
     resp => dispatch(receiveSong(resp)),
     e => errorHandle(e, dispatch)

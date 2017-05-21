@@ -6,46 +6,63 @@ class UploadForm extends React.Component {
 		this.state = {
 			title: "",
       user_id: props.currentUser,
-      source: undefined,
-      image_url: undefined,
+      source: "",
+      image_url: "",
       genre: ""
 		};
+
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	componentWillUnmount() {
+		this.props.errorClear();
 	}
 
 	update(field){
     // NEED REFACTORING:
-    // if (field === "source" || field === "image_url") {
-    //   return e => {
-    //     debugger;
-    //     this.setState({[field]: File.new(e.currentTarget.value)});};
-    // }
+    if (field === "source" || field === "image_url") {
+      return e => {
+        var fileReader = new FileReader();
+        const file = e.currentTarget.files[0];
+        fileReader.onloadend = () => {
+          this.setState({[field]: file});
+        };
+
+        if (file) { fileReader.readAsDataURL(file); }
+      };
+    }
 		return e => { this.setState({[field]: e.currentTarget.value }); };
 	}
 
-	_handleSubmit(song){
-	  //  return () => this.props.actionNewSong(song);
+	handleSubmit(){
+    var formData = new FormData();
+    const data = this.state;
+    Object.keys(data).forEach(key => {
+      formData.append(`song[${key}]`, data[key]);
+    });
+    this.props.actionNewSong(formData);
 	}
 
 	renderErrors(){
-    return (<ul className='errors'>Button disabled while patching...</ul>);
-		// return(
-		// 	<ul className='errors'>
-		// 		{this.props.errors.map( (error, i) => (
-		// 			<li key={`error-${i}`}>
-		// 				{error}
-		// 			</li>
-		// 		))}
-		// 	</ul>
-		// );
+    // return (<ul className='errors'>Button disabled while patching...</ul>);
+		return(
+			<ul className='errors'>
+				{this.props.errors.map( (error, i) => (
+					<li key={`error-${i}`}>
+						{error}
+					</li>
+				))}
+			</ul>
+		);
 	}
 
 	componentWillUnmount() {
 		this.props.closeModal();
-		this.props.errorClear();
+		// this.props.errorClear();
 	}
 
 	render() {
-
 		return (
 			<div>
 				<div className="login-form-container">
@@ -71,7 +88,6 @@ class UploadForm extends React.Component {
 
               <br />
                 <input type="file"
-                  value={this.state.source}
                   onChange={this.update("source")}
                   className="login-input" />
                 <label className="form-text">
@@ -80,7 +96,6 @@ class UploadForm extends React.Component {
 
               <br />
                 <input type="file"
-                  value={this.state.image_url}
                   onChange={this.update("image_url")}
                   className="login-input" />
                 <label className="form-text">
@@ -91,7 +106,7 @@ class UploadForm extends React.Component {
 							</div>
 							<br />
 								<button
-									onClick={this._handleSubmit(this.state)}>
+									onClick={this.handleSubmit}>
 									<span>
 										Upload!
 									</span>

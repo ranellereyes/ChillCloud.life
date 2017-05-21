@@ -83,6 +83,13 @@ class Nav extends React.Component {
     this.setState({userFormIsOpen: false});
   }
 
+  componentWillUnmount() {
+    this.setState({
+      userFormIsOpen: false,
+      uploadFormIsOpen: false
+    });
+  }
+
   render () {
     const user = this.props.currentUser || null;
 
