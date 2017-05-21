@@ -8,7 +8,7 @@ export const receiveRandomUsers = (users) => ({
   users
 });
 
-export const actionPlaySong = () => dispatch => {
+export const actionFeaturedUsers = () => dispatch => {
   return APIUtil.randomUsersRequest().then(
     users => dispatch(receiveRandomUsers(users)),
     e => errorHandle(e, dispatch)
