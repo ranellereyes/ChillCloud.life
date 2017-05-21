@@ -17,6 +17,9 @@ export const RECEIVE_SONG = "RECEIVE_SONG";
 export const RECEIVE_SONGS = "RECEIVE_SONGS";
 export const LOADING_SCREEN = "LOADING_SCREEN";
 export const REDIRECT = "REDIRECT";
+export const PLAY_SONG = "PLAY_SONG";
+export const PAUSE_SONG = "PAUSE_SONG";
+
 // export const CREATE_NEW_SONG = "CREATE_NEW_SONG";
 // export const DELETE_SONG = "DELETE_SONG";
 // export const EDIT_SONG = "EDIT_SONG";
@@ -39,12 +42,13 @@ export const actionSongIndex = () => dispatch => {
 
 export const actionNewSong = (song) => dispatch => {
   dispatch({ type: LOADING_SCREEN });
-  
+
   return APIUtil.newSongRequest(song).then(
     resp => dispatch(redirect(resp)),
     e => errorHandle(e, dispatch)
   );
 };
+
 //
 // export const actionDeleteSong = (song) => dispatch => {
 //   return APIUtil.deleteSongRequest(song).then(
@@ -76,6 +80,7 @@ export const redirect = (song) => ({
   type: REDIRECT,
   song
 });
+
 //
 // export const createNewSong = (song) => ({
 //   type: CREATE_NEW_SONG,
