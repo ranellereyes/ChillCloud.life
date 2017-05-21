@@ -7,12 +7,16 @@ import {
   clearErrors,
   errorHandle
 } from './errors_actions';
+import {
+  withRouter
+} from 'react-router-dom';
 
 // CONSTANTS
 
 export const RECEIVE_SONG = "RECEIVE_SONG";
 export const RECEIVE_SONGS = "RECEIVE_SONGS";
 export const LOADING_SCREEN = "LOADING_SCREEN";
+export const REDIRECT = "REDIRECT";
 // export const CREATE_NEW_SONG = "CREATE_NEW_SONG";
 // export const DELETE_SONG = "DELETE_SONG";
 // export const EDIT_SONG = "EDIT_SONG";
@@ -35,8 +39,9 @@ export const actionSongIndex = () => dispatch => {
 
 export const actionNewSong = (song) => dispatch => {
   dispatch({ type: LOADING_SCREEN });
+  
   return APIUtil.newSongRequest(song).then(
-    resp => dispatch(receiveSong(resp)),
+    resp => dispatch(redirect(resp)),
     e => errorHandle(e, dispatch)
   );
 };
@@ -64,6 +69,11 @@ export const receiveSongs = (song) => ({
 
 export const receiveSong = (song) => ({
   type: RECEIVE_SONG,
+  song
+});
+
+export const redirect = (song) => ({
+  type: REDIRECT,
   song
 });
 //

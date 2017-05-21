@@ -1,12 +1,13 @@
 import React from 'react';
 import SongItem from './song_item';
+import {withRouter} from 'react-router-dom';
 
 class SongDetailList extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getAllSongs();
   }
 
@@ -27,4 +28,4 @@ class SongDetailList extends React.Component {
   }
 }
 
-export default SongDetailList;
+export default withRouter(SongDetailList);

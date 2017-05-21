@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class UploadForm extends React.Component {
 	constructor(props){
@@ -17,6 +18,15 @@ class UploadForm extends React.Component {
 
 	componentWillUnmount() {
 		this.props.errorClear();
+		this.props.closeModal();
+	}
+
+	componentDidUpdate() {
+		debugger;
+		if (this.props.songs.redirect) {
+			this.props.closeModal();
+			this.props.history.push(`/songs/${this.props.songs.redirect}`);
+		}
 	}
 
 	update(field){
@@ -32,20 +42,22 @@ class UploadForm extends React.Component {
         if (file) { fileReader.readAsDataURL(file); }
       };
     }
+		
 		return e => { this.setState({[field]: e.currentTarget.value }); };
 	}
 
 	handleSubmit(){
     var formData = new FormData();
     const data = this.state;
-    Object.keys(data).forEach(key => {
+
+	  Object.keys(data).forEach(key => {
       formData.append(`song[${key}]`, data[key]);
     });
+
     this.props.actionNewSong(formData);
 	}
 
 	renderErrors(){
-    // return (<ul className='errors'>Button disabled while patching...</ul>);
 		return(
 			<ul className='errors'>
 				{this.props.errors.map( (error, i) => (
@@ -57,10 +69,6 @@ class UploadForm extends React.Component {
 		);
 	}
 
-	componentWillUnmount() {
-		this.props.closeModal();
-		// this.props.errorClear();
-	}
 
 	render() {
 		return (
@@ -119,11 +127,4 @@ class UploadForm extends React.Component {
 
 }
 
-// <button onClick={this._handleSubmit('login')}>
-// 	Log In
-// </button>
-// <button onClick={this._handleSubmit('signup')}>
-// 	Sign Up
-// </button>
-
-export default UploadForm;
+export default withRouter(UploadForm);

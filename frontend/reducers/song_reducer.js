@@ -1,7 +1,7 @@
 import {
   RECEIVE_SONG,
-  RECEIVE_SONGS
-  // DELETE_SONG,
+  RECEIVE_SONGS,
+  REDIRECT
   // EDIT_SONG
 } from '../actions/song_actions';
 import {
@@ -18,7 +18,10 @@ import merge from 'lodash/merge';
 // };
 
 const SongReducer = function(state = {}, action){
+  debugger;
   switch(action.type){
+    case REDIRECT:
+      return { redirect: action.song.id };
     case RECEIVE_SONG:
       return action.song;
     case RECEIVE_SONGS:
