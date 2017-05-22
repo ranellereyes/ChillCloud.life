@@ -2,10 +2,16 @@ import * as APIUtil from '../util/song_util';
 import { errorHandle } from './errors_actions';
 
 export const QUEUE_SONG = "QUEUE_SONG";
+export const PLAY_SONG = "PLAY_SONG";
 
 export const actionQueueSong = (song) => ({
     type: QUEUE_SONG,
     song
+});
+
+export const actionPlaySong = (song) => ({
+  type: PLAY_SONG,
+  song
 });
 
 

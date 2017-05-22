@@ -3,6 +3,7 @@ import SongItem from './song_item';
 import UploadFormContainer from '../upload_forms/upload_form_container';
 import Modal from 'react-modal';
 import { withRouter } from 'react-router-dom';
+import AudioPlayerContainer from '../audio_player/audio_player_container';
 
 const modalUploadStyle = {
   overlay : {
@@ -97,6 +98,7 @@ class SongView extends React.Component {
     return Object.keys(songs).length !== 0 ? (
       <main className="song-view-main">
         <div className="song-view">
+          <AudioPlayerContainer />
           <SongItem song={songs} currentUser={currentUser} />
         </div>
         <Modal

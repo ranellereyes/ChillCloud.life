@@ -3,7 +3,8 @@ import {
   actionSongIndex
  } from '../../actions/song_actions';
 import {
-  actionQueueSong
+  actionQueueSong,
+  actionPlaySong
 } from '../../actions/audio_player_actions';
 import SongDetailList from './song_detail_list';
 
@@ -13,7 +14,7 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
   getAllSongs: () => dispatch(actionSongIndex()),
-  play: (song) => dispatch(actionQueueSong(song))
+  play: (song) => dispatch(actionPlaySong(song))
 });
 
 export default connect(

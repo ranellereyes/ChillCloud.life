@@ -1,38 +1,49 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Audio from 'react-audioplayer';
 
-const AudioPlayer = ({playlist}) => {
-  window.playlist = playlist;
+class AudioPlayer extends React.Component {
+  constructor(props) {
+    super(props);
 
-  // const player = document.getByElementId("audio-player");
+    this.state = {
+      player: null
+    };
+  }
 
-  return (
-    (playlist.length > 0) ? (
-      <footer>
-        <img
-          src={playlist[0].img}
-          className="small-player"/>
-        <Audio
-          id="audio-player"
-          fullPlayer={true}
-          width={240}
-          autoPlay={true}
-          playlist={playlist} />
-      </footer>
-    ) : null
-  );
-};
+  componentWillReceiveProps(e) {
+    if (!this.state.player) {
+      const player = document.getElementById('Audio');
+      window.player = player;
+      this.setState({player});
+    }
+  }
+
+  render () {
+    debugger;
+    const playlist = this.props.playlist;
+
+    return (
+      playlist.length > 0 ? (
+        <footer>
+          <img
+            src={playlist[0].img}
+            className="small-player" />
+          <div>
+            <audio
+              id="Audio"
+              src={`${playlist[0].src}`}
+              controls
+              autoPlay/>
+          </div>
+        </footer>
+      ) : null
+    );
+  }
+}
 
 export default AudioPlayer;
 
 
-
-// return (
-//   currentSong.song ? (
-//     <audio
-//       src={`${currentSong.song.song_details.source}`}
-//       controls
-//       autoPlay/>
-//   ) : null
-// );
+// <img
+//   src={playlist[0].img}
+//   className="small-player"/>
