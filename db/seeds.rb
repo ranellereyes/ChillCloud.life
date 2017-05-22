@@ -10,13 +10,17 @@ User.destroy_all
 
 nujabes = User.new(username: 'Nujabes', password: 'password')
 nujabes.save
-dj = User.new(username: 'DJ Okawari', password: 'password')
+djimg = "https://s3-us-west-1.amazonaws.com/chillcloud-dev/DJOkawari.jpg"
+dj = User.new(username: 'DJ Okawari', password: 'password', image: djimg)
 dj.save
-emapea = User.new(username: 'Emapea', password: 'password')
+empimg = "https://s3-us-west-1.amazonaws.com/chillcloud-dev/emapea.JPG"
+emapea = User.new(username: 'Emapea', password: 'password', image: empimg)
 emapea.save
-nymano = User.new(username: 'Nymano', password: 'password')
+nymimg = "https://s3-us-west-1.amazonaws.com/chillcloud-dev/nymano.jpg"
+nymano = User.new(username: 'Nymano', password: 'password', image: nymimg)
 nymano.save
-sfc = User.new(username: 'Songs For Cinema', password: 'password')
+sfcimg = "https://s3-us-west-1.amazonaws.com/chillcloud-dev/SongsForCinema.jpg"
+sfc = User.new(username: 'Songs For Cinema', password: 'password', image: sfcimg)
 sfc.save
 
 Song.destroy_all

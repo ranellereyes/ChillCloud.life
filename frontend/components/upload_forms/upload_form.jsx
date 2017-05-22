@@ -111,7 +111,7 @@ class UploadForm extends React.Component {
 							{ this.renderErrors() }
 						</div>
 						<br />
-						
+
 						<button
 							onClick={this.handleSubmit}>
 							<span>
