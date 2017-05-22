@@ -1,11 +1,36 @@
 $lightest-gray: #f7f7f5;
 $alice-blue: #f9f9f9;
+$light-gray: #e2e2e2;
+
 
 .App {
   display: flex;
   flex-direction: column;
   background-color: white;
   height: 100%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+}
+
+footer > div {
+  border-top: 2px solid $light-gray;
+  border-left: 2px solid $light-gray;
+  border-right: 2px solid $light-gray;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.AudioPlayer {
+  width: 100vw;
+  height: 200px;
 }
 
 #root {
@@ -20,6 +45,16 @@ main {
   display: flex;
   margin-top: 36px;
   background-color: $alice-blue;
+}
+
+.small-player {
+  width: 120px;
+  height: 120px;
+  right: 0;
+  border-top: 2px solid $light-gray;
+  border-left: 2px solid $light-gray;
+  border-right: 2px solid $light-gray;
+  border-radius: 4px;
 }
 
 .avatar {

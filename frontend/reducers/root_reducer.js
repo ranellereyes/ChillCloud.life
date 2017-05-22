@@ -11,6 +11,6 @@ export default combineReducers({
   errors: ErrorReducer,
   songs: SongReducer,
   loading: LoadingReducer,
-  currentSong: AudioPlayerReducer,
+  playlist: AudioPlayerReducer,
   users: UserReducer
 });

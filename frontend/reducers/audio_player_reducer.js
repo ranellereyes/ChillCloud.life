@@ -1,21 +1,19 @@
 import {
-  PLAY_SONG,
-  PAUSE_SONG
+  QUEUE_SONG
 } from '../actions/audio_player_actions';
 import { merge } from 'lodash';
 
-
-const defaultState = {
-  isPlaying: false,
-  song: null
-};
-
-const AudioPlayerReducer = (state = defaultState, action) => {
+const AudioPlayerReducer = (state = [], action) => {
+  Object.freeze(state);
   switch (action.type) {
-    case PLAY_SONG:
-      return { isPlaying: true, song: action.song };
-    case PAUSE_SONG:
-      return merge({}, state, { isPlaying: false });
+    case QUEUE_SONG:
+      const newSong = {
+        name: action.song.title,
+        src: action.song.song_details.source,
+        img: action.song.image_url
+      };
+      let newState = state.concat([newSong]);
+      return newState;
     default:
       return state;
   }

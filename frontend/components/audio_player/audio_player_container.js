@@ -1,20 +1,15 @@
 import { connect } from 'react-redux';
 import {
-  actionPlaySong,
-  actionPauseSong
+  actionQueueSong
  } from '../../actions/song_actions';
 import AudioPlayer from './audio_player';
 
-const mapStateToProps = state => {
-
-return ({
-  currentSong: state.currentSong
+const mapStateToProps = state => ({
+  playlist: state.playlist
 });
-};
 
 const mapDispatchToProps = dispatch => ({
-  play: (song) => dispatch(actionPlaySong(song)),
-  pause: () => dispatch(actionPauseSong())
+  play: (song) => dispatch(actionQueueSong(song))
 });
 
 export default connect(
