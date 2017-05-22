@@ -24,17 +24,20 @@ export const songRequest = (id) => (
   })
 );
 
-export const editSongRequest = (song) => (
+export const editSongRequest = (formData, id) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/songs/${song.id}`,
-    data: {song}
+    url: `/api/songs/${id}`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
   })
 );
 
-export const deleteSongRequest = (song) => (
+export const deleteSongRequest = (id) => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/songs/${song.id}`
+    url: `/api/songs/${id}`
   })
 );

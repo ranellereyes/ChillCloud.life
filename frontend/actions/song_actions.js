@@ -49,20 +49,21 @@ export const actionNewSong = (song) => dispatch => {
   );
 };
 
-//
-// export const actionDeleteSong = (song) => dispatch => {
-//   return APIUtil.deleteSongRequest(song).then(
-//     resp => dispatch(deleteSong(resp)),
-//     errorHandle
-//   );
-// };
-//
-// export const actionEditSong = (song) => dispatch => {
-//   return APIUtil.editSongRequest(song).then(
-//     resp => dispatch(editSong(resp)),
-//     errorHandle
-//   );
-// };
+export const actionEditSong = (song, id) => dispatch => {
+  dispatch({ type: LOADING_SCREEN });
+
+  return APIUtil.editSongRequest(song, id).then(
+    resp => dispatch(receiveSong(resp)),
+    e => errorHandle(e, dispatch)
+  );
+};
+
+export const actionDeleteSong = (song) => dispatch => {
+  return APIUtil.deleteSongRequest(song).then(
+    resp => dispatch(redirect("stream")),
+    errorHandle
+  );
+};
 
 // // SYNC ACTIONS
 
@@ -76,9 +77,9 @@ export const receiveSong = (song) => ({
   song
 });
 
-export const redirect = (song) => ({
+export const redirect = (resp) => ({
   type: REDIRECT,
-  song
+  song: resp
 });
 
 //

@@ -104,7 +104,8 @@ class Nav extends React.Component {
               style={modalUploadStyle}
             >
               <UploadFormContainer
-                closeModal={this.closeUploadForm} />
+                closeModal={this.closeUploadForm}
+                type="upload" />
             </Modal>
             <button onClick={this.openUploadForm}>
               <span>

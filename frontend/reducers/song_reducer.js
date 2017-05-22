@@ -20,7 +20,7 @@ import merge from 'lodash/merge';
 const SongReducer = function(state = {}, action){
   switch(action.type){
     case REDIRECT:
-      return { redirect: action.song.id };
+      return { redirect: action.song };
     case RECEIVE_SONG:
       return action.song;
     case RECEIVE_SONGS:

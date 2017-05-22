@@ -28,8 +28,11 @@ dududu.save
 
 Song.destroy_all
 
-test_song = File.open("#{Rails.root}/app/assets/music/nujabes-feather.mp3")
+feather = File.open("#{Rails.root}/app/assets/music/nujabes-feather.mp3")
+test_song = File.open("#{Rails.root}/app/assets/music/epikhigh.mp3")
 
-Song.create!(title: 'Feather', user_id: nujabes.id, source: test_song)
+Song.create!(title: 'Feather', user_id: nujabes.id, source: feather)
 Song.create!(title: 'Reflection Eternal', user_id: nujabes.id, source: test_song)
-Song.create!(title: 'Modal Soul', user_id: nujabes.id, source: test_song)
+Song.create!(title: 'Luv Letter', user_id: dj.id, image_url: djimg, source: test_song)
+Song.create!(title: 'Flower Dance', user_id: dj.id, image_url: djimg, source: test_song)
+Song.create!(title: 'DUDUDUDUDUUUU', user_id: dududu.id, image_url: dudu, source: test_song)

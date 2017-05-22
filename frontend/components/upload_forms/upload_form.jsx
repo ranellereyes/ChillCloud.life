@@ -4,7 +4,15 @@ import { withRouter } from 'react-router-dom';
 class UploadForm extends React.Component {
 	constructor(props){
 		super(props);
-		this.state = {
+		this.state = (props.type === "update") ?
+		{
+			id: props.songs.id,
+			title: props.songs.title,
+			user_id: props.currentUser,
+			source: props.songs.source,
+			image_url: props.songs.image_url,
+			genre: props.songs.genre
+		} : {
 			title: "",
       user_id: props.currentUser,
       source: "",
@@ -24,7 +32,12 @@ class UploadForm extends React.Component {
 	componentDidUpdate() {
 		if (this.props.songs.redirect) {
 			this.props.closeModal();
-			this.props.history.push(`/songs/${this.props.songs.redirect}`);
+
+			if (this.props.songs.redirect === "stream") {
+				this.props.history.push(`/stream`);
+			} else {
+				this.props.history.push(`/songs/${this.props.songs.redirect.id}`);
+			}
 		}
 	}
 
@@ -52,7 +65,9 @@ class UploadForm extends React.Component {
       formData.append(`song[${key}]`, data[key]);
     });
 
-    this.props.actionNewSong(formData);
+    this.props.type === "update" ?
+			this.props.actionEditSong(formData, data.id) :
+			this.props.actionNewSong(formData);
 	}
 
 	renderErrors(){
@@ -78,7 +93,7 @@ class UploadForm extends React.Component {
 					<div className="login-form">
 						<br />
 							<input type="text"
-								value={this.state.title}
+								value={this.state.title || ''}
 								onChange={this.update("title")}
 								className="login-input" />
               <label className="form-text"> Title:
@@ -86,7 +101,7 @@ class UploadForm extends React.Component {
 
 						<br />
 							<input type="text"
-								value={this.state.genre}
+								value={this.state.genre || ''}
 								onChange={this.update("genre")}
 								className="login-input" />
               <label className="form-text"> Genre:

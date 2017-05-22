@@ -5,6 +5,7 @@ import {
 import SongDetailList from './song_detail_list';
 
 const mapStateToProps = state => ({
+  currentUser: state.session.currentUser,
   songs: state.songs
 });
 const mapDispatchToProps = dispatch => ({
