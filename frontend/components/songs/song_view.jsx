@@ -57,17 +57,19 @@ class SongView extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.song_id !== nextProps.match.params.song_id) {
-      this.props.getSong(nextProps.match.params.song_id);
-    }
+    if (!nextProps.songs.redirect) { this.closeForm(); }
   }
 
   componentDidUpdate() {
     if (this.props.songs.redirect === "stream") {
       this.props.history.push(`/stream`);
-    } else {
+    } else if (this.props.songs.redirect === "success") {
       this.closeForm();
+      this.props.getSong(this.props.match.params.song_id);
     }
+    //  else {
+    //   this.closeForm();
+    // }
   }
 
 

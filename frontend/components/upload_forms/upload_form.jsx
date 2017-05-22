@@ -29,17 +29,17 @@ class UploadForm extends React.Component {
 		this.props.closeModal();
 	}
 
-	componentDidUpdate() {
-		if (this.props.songs.redirect) {
-			this.props.closeModal();
-
-			if (this.props.songs.redirect === "stream") {
-				this.props.history.push(`/stream`);
-			} else {
-				this.props.history.push(`/songs/${this.props.songs.redirect.id}`);
-			}
-		}
-	}
+	// componentDidUpdate() {
+	// 	if (this.props.songs.redirect) {
+	// 		this.props.closeModal();
+	//
+	// 		if (this.props.songs.redirect === "stream") {
+	// 			this.props.history.push(`/stream`);
+	// 		} else {
+	// 			this.props.history.push(`/songs/${this.props.songs.redirect.id}`);
+	// 		}
+	// 	}
+	// }
 
 	update(field){
     if (["source", "image_url"].includes(field)) {
