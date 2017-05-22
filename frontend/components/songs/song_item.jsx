@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-export const SongItem = ({match, song, currentUser}) => {
+export const SongItem = ({match, song, currentUser, play, pause}) => {
   let button;
 
   if (match.path !== "/songs/:song_id") {
@@ -21,7 +21,9 @@ export const SongItem = ({match, song, currentUser}) => {
       <img src={song.image_url} />
       <div className="second-col">
         <section>
-          <div className="play-button"></div>
+          <div
+            className="play-button"
+            onClick={play}/>
           <ul className="details">
             <li key={`title-${song.id}`}>{song.title}</li>
             <li key={`artist-${song.id}`}>{song.artist}</li>

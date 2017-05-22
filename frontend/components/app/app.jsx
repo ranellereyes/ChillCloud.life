@@ -8,6 +8,7 @@ import SongDetailListContainer from "../songs/song_detail_list_container";
 import SongViewContainer from "../songs/song_view_container";
 import {AuthRoute, ProtectedRoute} from '../../util/route_util';
 import LoadingContainer from './loading_container';
+import AudioPlayerContainer from '../audio_player/audio_player_container';
 // TEST
 import GreetingContainer from '../greeting/greeting_container';
 
@@ -25,6 +26,7 @@ const App = ({current_user}) => {
           <ProtectedRoute path="/songs/:song_id" component={SongViewContainer} />
         </Switch>
       </main>
+      <AudioPlayerContainer />
     </div>
   );
 };
