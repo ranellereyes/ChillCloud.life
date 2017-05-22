@@ -1,5 +1,33 @@
+$shadow: rgb(77, 76, 76);
+
 .stream-list {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   font-size: 44px;
-  font-family: 'Monsterrat', sans-serif;
+  font-family: 'Monsterrat', sans-serif
+}
+
+.main-body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+}
+
+.side-bar {
+  width: 30vw;
+}
+.side-bar-list {
+  width: 30vw;
+  border-left: 2px solid gray;
+
+  li:hover {
+    background-color: $shadow;
+  }
 }

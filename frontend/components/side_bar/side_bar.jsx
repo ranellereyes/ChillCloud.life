@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 
 class SideBar extends React.Component {
   constructor(props) {
@@ -12,15 +12,14 @@ class SideBar extends React.Component {
 
   render () {
     const users = this.props.users;
-
-    if (users.length === 0) { return null; }
+    if (Object.keys(users).length === 0) { return null; }
 
     return (
       <ul className="side-bar-list">Check out these feature artists!
         {users.map((user, i) => (
           <li key={`user-${i}`}>
             <Link to={`/users/${user.id}`}>
-              user.username
+              {user.username}
             </Link>
           </li>
         ))}
