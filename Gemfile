@@ -50,6 +50,9 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   # gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
+
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem 'rack-livereload'  
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
 

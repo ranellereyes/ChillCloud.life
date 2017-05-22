@@ -16,7 +16,7 @@ class SideBar extends React.Component {
 
     return (
       <ul className="side-bar-list">
-        <label>Check out these feature artists!</label>
+        <label>Check out these featured artists!</label>
         {users.map((user, i) => (
           <li key={`user-${i}`}>
             <Link to={`/users/${user.id}`}>

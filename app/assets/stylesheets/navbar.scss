@@ -46,8 +46,9 @@ header {
 }
 
 nav {
-  width: inherit;
+  width: 100%;
   height: inherit;
+  margin: 0;
 }
 
 input {
@@ -123,6 +124,8 @@ input {
   justify-content: space-between;
   align-items: center;
   height: inherit;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .right-nav-btns {

@@ -5,11 +5,12 @@ $dark-gray: #6f6f6f;
 $shadow: rgb(77, 76, 76);
 
 .song-view {
-  width: 85vw;
+  width: inherit;
   height: auto;
 }
 
 .song-view-main {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -20,7 +21,7 @@ $shadow: rgb(77, 76, 76);
   display: flex;
   flex-direction: row;
   margin: 15px;
-  width: 85%;
+  // width: inherit;
   height: auto;
   border-style: solid;
   border-width: 2px;
