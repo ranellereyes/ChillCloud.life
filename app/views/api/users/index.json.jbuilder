@@ -1,1 +1,1 @@
-json.array! @users, :id, :username
+json.array! @users, :id, :username, :image

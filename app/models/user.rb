@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates_uniqueness_of :username
   validates :password, length: {minimum: 6}, allow_nil: true
 
-  has_attached_file :image, default_url: "http://s3-us-west-1.amazonaws.com/chillcloud-dev/users/images/000/000/006/original/NujabesAvatar.jpg"
+  has_attached_file :image, default_url: "https://s3-us-west-1.amazonaws.com/chillcloud-dev/NujabesAvatar.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   after_initialize :ensure_session_token

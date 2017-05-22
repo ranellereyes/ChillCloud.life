@@ -17,7 +17,8 @@ class SongDetailList extends React.Component {
     if (Object.keys(songs)[0] === "id") { return null; }
 
     return (
-      <ul className="stream-list">Stream!
+      <ul className="stream-list">
+        <label>Stream!</label>
         {Object.keys(songs).map((key) => (
           <li key={`song-${key}`}>
             <SongItem song={songs[key]} />

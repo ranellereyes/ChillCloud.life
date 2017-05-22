@@ -15,11 +15,15 @@ class SideBar extends React.Component {
     if (Object.keys(users).length === 0) { return null; }
 
     return (
-      <ul className="side-bar-list">Check out these feature artists!
+      <ul className="side-bar-list">
+        <label>Check out these feature artists!</label>
         {users.map((user, i) => (
           <li key={`user-${i}`}>
             <Link to={`/users/${user.id}`}>
-              {user.username}
+              <img src={`${user.image}`} className="avatar"/>
+              <p>
+                {user.username}
+              </p>
             </Link>
           </li>
         ))}
