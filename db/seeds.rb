@@ -22,6 +22,9 @@ nymano.save
 sfcimg = "https://s3-us-west-1.amazonaws.com/chillcloud-dev/SongsForCinema.jpg"
 sfc = User.new(username: 'Songs For Cinema', password: 'password', image: sfcimg)
 sfc.save
+dudu = "https://s3-us-west-1.amazonaws.com/chillcloud-dev/dudududu.jpg"
+dududu = User.new(username: 'Darude', password: 'password', image: dudu)
+dududu.save
 
 Song.destroy_all
 
