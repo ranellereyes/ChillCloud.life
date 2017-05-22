@@ -1,9 +1,14 @@
 import React from 'react';
 
-const AudioPlayer = ({song, isPlaying}) => (
-  song ? (
-    <audio controls src={`${song.song_details.source}`} />
-  ) : null
-);
+const AudioPlayer = ({currentSong}) => {
+  return (
+    currentSong.song ? (
+      <audio
+        src={`${currentSong.song.song_details.source}`}
+        controls
+        autoPlay/>
+    ) : null
+  );
+};
 
 export default AudioPlayer;

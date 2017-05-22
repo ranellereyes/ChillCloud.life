@@ -4,6 +4,8 @@ import { Link, withRouter } from 'react-router-dom';
 export const SongItem = ({match, song, currentUser, play, pause}) => {
   let button;
 
+  const playSong = () => (play(song));
+
   if (match.path !== "/songs/:song_id") {
     button = (
       <button>
@@ -23,7 +25,7 @@ export const SongItem = ({match, song, currentUser, play, pause}) => {
         <section>
           <div
             className="play-button"
-            onClick={play}/>
+            onClick={playSong}/>
           <ul className="details">
             <li key={`title-${song.id}`}>{song.title}</li>
             <li key={`artist-${song.id}`}>{song.artist}</li>
