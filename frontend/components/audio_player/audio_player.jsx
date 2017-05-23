@@ -1,26 +1,63 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const AudioPlayer = ({playlist}) => {
-  return playlist.length > 0 ?
-  (
-    <footer>
-      <marquee>
-        {`Currently Playing: "${playlist[0].name}" - ${playlist[0].artist}`}
-      </marquee>
-      <img
-        src={playlist[0].img}
-        className="small-player"/>
-      <div>
-        <audio
-          src={playlist[0].src}
-          id="Audio"
-          controls
-          autoPlay/>
-      </div>
-    </footer>
-  ) : null;
-};
+class AudioPlayer extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      playlist: this.props.playlist,
+      player: document.getElementById("Audio")
+    };
+
+    // this.playNext = this.playNext.bind(this);
+    window.playlist = this.state.playlist;
+  }
+
+  // playNext() {
+  //   let newPlaylist = this.props.playlist.slice(1);
+  //   this.setState({playlist: newPlaylist});
+  // }
+
+  render() {
+    const { playlist } = this.props;
+    debugger;
+
+    return (playlist.length > 0) ?
+    (
+      <footer>
+        <marquee>
+          {`Currently Playing: "${playlist[0].name}" - ${playlist[0].artist}`}
+        </marquee>
+        <img
+          src={playlist[0].img}
+          className="small-player"/>
+        <div>
+          <audio
+            src={playlist[0].src}
+            id="Audio"
+            controls
+            onEnded={this.props.next}
+            autoPlay/>
+        </div>
+      </footer>
+    ) : (
+      <footer>
+        <marquee className="empty-queue">
+          Nothing in queue D=
+        </marquee>
+      </footer>
+    );
+  }
+}
+
+export default AudioPlayer;
+
+
+// <img
+//   src={playlist[0].img}
+//   className="small-player"/>
+
 // class AudioPlayer extends React.Component {
 //   constructor(props) {
 //     super(props);
@@ -65,10 +102,3 @@ const AudioPlayer = ({playlist}) => {
 //     );
 //   }
 // }
-
-export default AudioPlayer;
-
-
-// <img
-//   src={playlist[0].img}
-//   className="small-player"/>

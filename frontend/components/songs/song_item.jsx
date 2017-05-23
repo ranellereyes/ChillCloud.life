@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-export const SongItem = ({match, song, currentUser, play, pause}) => {
+export const SongItem = ({match, song, currentUser, play, queue}) => {
   let button;
 
   const playSong = () => (play(song));
+  const queueSong = () => (queue(song));
 
   if (match.path !== "/songs/:song_id") {
     button = (
@@ -25,7 +26,7 @@ export const SongItem = ({match, song, currentUser, play, pause}) => {
         <section>
           <button
             className="play-button"
-            onClick={playSong}
+            onClick={queueSong}
             />
           <ul className="details">
             <li key={`title-${song.id}`}>{song.title}</li>

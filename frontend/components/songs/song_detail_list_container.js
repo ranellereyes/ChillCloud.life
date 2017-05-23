@@ -14,7 +14,8 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
   getAllSongs: () => dispatch(actionSongIndex()),
-  play: (song) => dispatch(actionPlaySong(song))
+  play: (song) => dispatch(actionPlaySong(song)),
+  queue: (song) => dispatch(actionQueueSong(song))
 });
 
 export default connect(
