@@ -1,9 +1,16 @@
 $light-gray: #e2e2e2;
 
 #Audio {
+  border-top: 2px solid $light-gray;
+  border-right: 2px solid $light-gray;
+  border-radius: 4px;
   width: 100%;
   height: 40px;
   color: black;
+  position: fixed;
+  left: 30px;
+  bottom: 0px;
+  background-color: white;
 }
 
 footer {
@@ -19,7 +26,8 @@ footer {
     width: 20%;
     position: fixed;
     background-color: white;
-    bottom: 44px;
+    right: 80px;
+    bottom: 42px;
     border-top: 2px solid $light-gray;
     border-left: 2px solid $light-gray;
     border-right: 2px solid $light-gray;
@@ -28,13 +36,18 @@ footer {
 
   .empty-queue {
     bottom: 0px;
+    right: 0px;
   }
 }
 
 footer > div {
-  border-top: 2px solid $light-gray;
-  border-left: 2px solid $light-gray;
-  border-right: 2px solid $light-gray;
-  border-radius: 4px;
-  background-color: white;
+  position: relative;
+
+  img {
+    width: 25px;
+    height: 20px;
+    position: fixed;
+    left: 8px;
+    bottom: 5px;
+  }
 }
