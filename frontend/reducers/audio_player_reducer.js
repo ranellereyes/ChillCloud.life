@@ -7,14 +7,18 @@ import { merge } from 'lodash';
 
 const AudioPlayerReducer = (state = [], action) => {
   Object.freeze(state);
+  
   switch (action.type) {
-    // case PLAY_SONG:
-    //   return [{
-    //     name: action.song.title,
-    //     src: action.song.song_details.source,
-    //     img: action.song.image_url,
-    //     artist: action.song.artist
-    //   }];
+    case PLAY_SONG:
+      const nextSong = [{
+        name: action.song.title,
+        src: action.song.song_details.source,
+        img: action.song.image_url,
+        artist: action.song.artist
+      }];
+
+      return nextSong.concat(state);
+
     case QUEUE_SONG:
       const newSong = {
         name: action.song.title,
@@ -22,10 +26,19 @@ const AudioPlayerReducer = (state = [], action) => {
         img: action.song.image_url,
         artist: action.song.artist
       };
-      let newState = state.concat([newSong]);
-      return newState;
+
+      // Prevent multiple instances of same song which breaks player
+
+      if (state.length > 0 &&
+        newSong.name === state.slice(-1)[0].name) {
+        return state;
+      } else {
+        return state.concat([newSong]);
+      }
+
     case NEXT_SONG:
       return state.slice(1);
+
     default:
       return state;
   }

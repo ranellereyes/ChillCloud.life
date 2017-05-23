@@ -76,12 +76,16 @@ footer > div {
     display: none;
     position: fixed;
     bottom: 67px;
-    right: 86px;
+    right: 82px;
     background-color: #f9f9f9;
     width: 185px;
     min-width: 160px;
     padding: 4px 6px;
     z-index: 1;
+    border-top: 2px solid $light-gray;
+    border-left: 2px solid $light-gray;
+    border-right: 2px solid $light-gray;
+    border-radius: 4px;
 }
 
 .dropdown:hover .dropdown-content {
