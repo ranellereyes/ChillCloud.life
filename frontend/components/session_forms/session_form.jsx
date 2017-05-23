@@ -8,6 +8,8 @@ class SessionForm extends React.Component {
 			password: "",
 			type: this.props.type
 		};
+
+		this.switchForm = this.switchForm.bind(this);
 	}
 
 	update(field){
@@ -34,13 +36,17 @@ class SessionForm extends React.Component {
 		);
 	}
 
+	switchForm() {
+		let type = this.state.type === "login" ? "signup" : "login";
+		this.setState({type});
+	}
+
 	componentWillUnmount() {
 		this.props.closeModal();
 		this.props.errorClear();
 	}
 
 	render() {
-
 		return (
 			<div>
 				<div className="login-form-container">
@@ -72,7 +78,8 @@ class SessionForm extends React.Component {
 									<span>
 										{this.state.type === 'login' ?
 											"Log In" :
-											"Sign Up"}
+											"Sign Up"
+										}
 									</span>
 								</button>
 								<br />
@@ -80,6 +87,16 @@ class SessionForm extends React.Component {
 									onClick={this.props.demoLogin}>
 									<span>
 										Demo
+									</span>
+								</button>
+								<br />
+								<br />
+								<button
+									onClick={this.switchForm}>
+									<span>
+										{this.state.type === 'login' ?
+											"Sign Up" :
+											"Log In"}
 									</span>
 								</button>
 						</div>
