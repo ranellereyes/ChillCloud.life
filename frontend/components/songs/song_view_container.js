@@ -3,6 +3,10 @@ import {
   actionGetSong,
   actionDeleteSong
  } from '../../actions/song_actions';
+import {
+  actionPlaySong,
+  actionQueueSong
+} from '../../actions/audio_player_actions';
 import SongView from './song_view';
 
 const mapStateToProps = state => ({
@@ -12,7 +16,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getSong: (id) => dispatch(actionGetSong(id)),
-  deleteSong: (id) => dispatch(actionDeleteSong(id))
+  deleteSong: (id) => dispatch(actionDeleteSong(id)),
+  play: (song) => dispatch(actionPlaySong(song)),
+  queue: (song) => dispatch(actionQueueSong(song))
 });
 
 export default connect(

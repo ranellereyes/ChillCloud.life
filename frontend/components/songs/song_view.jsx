@@ -98,8 +98,10 @@ class SongView extends React.Component {
     return Object.keys(songs).length !== 0 ? (
       <main className="song-view-main">
         <div className="song-view">
-          <AudioPlayerContainer />
-          <SongItem song={songs} currentUser={currentUser} />
+          <SongItem
+            song={songs}
+            currentUser={currentUser}
+            play={this.props.play} />
         </div>
         <Modal
           isOpen={this.state.isOpen}

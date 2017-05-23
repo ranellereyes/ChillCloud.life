@@ -8,7 +8,7 @@ export const SongItem = ({match, song, currentUser, play, pause}) => {
 
   if (match.path !== "/songs/:song_id") {
     button = (
-      <button>
+      <button className="comments">
         <Link to={`/songs/${song.id}`}>
           Comments!
         </Link>
@@ -23,17 +23,18 @@ export const SongItem = ({match, song, currentUser, play, pause}) => {
       <img src={song.image_url} />
       <div className="second-col">
         <section>
-          <div
+          <button
             className="play-button"
-            onClick={playSong}/>
+            onClick={playSong}
+            />
           <ul className="details">
             <li key={`title-${song.id}`}>{song.title}</li>
             <li key={`artist-${song.id}`}>{song.artist}</li>
           </ul>
         </section>
-        {button}
       </div>
-      <p>{song.genre}</p>
+      {button}
+      <p className="genre">{song.genre ? `#${song.genre}` : null}</p>
     </div>
   );
 };

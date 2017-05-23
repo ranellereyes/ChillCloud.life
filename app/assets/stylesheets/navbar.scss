@@ -11,6 +11,7 @@ $dark-blue: #4d7b9f;
 $darkest-blue: #265e8b;
 
 header {
+  z-index: 900;
   background-color: $gray;
   font: Sans-Serif;
   width: 100%;
@@ -19,7 +20,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 36px;
+  height: 40px;
   position: fixed;
 }
 
@@ -49,6 +50,7 @@ nav {
   width: 100%;
   height: inherit;
   margin: 0;
+  z-index: 95;
 }
 
 input {
@@ -128,9 +130,16 @@ input {
   margin-right: 10px;
 }
 
+.mini {
+  padding: 5px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
 .right-nav-btns {
   display: flex;
-  align-content: center;
+  align-items: center;
 
   p {
     font-family: 'Monsterrat', sans-serif;

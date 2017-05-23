@@ -1,45 +1,67 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class AudioPlayer extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      player: null
-    };
-  }
-
-  componentWillReceiveProps(e) {
-    if (!this.state.player) {
-      const player = document.getElementById('Audio');
-      window.player = player;
-      this.setState({player});
-    }
-  }
-
-  render () {
-    debugger;
-    const playlist = this.props.playlist;
-
-    return (
-      playlist.length > 0 ? (
-        <footer>
-          <img
-            src={playlist[0].img}
-            className="small-player" />
-          <div>
-            <audio
-              id="Audio"
-              src={`${playlist[0].src}`}
-              controls
-              autoPlay/>
-          </div>
-        </footer>
-      ) : null
-    );
-  }
-}
+const AudioPlayer = ({playlist}) => {
+  return playlist.length > 0 ?
+  (
+    <footer>
+      <img
+        src={playlist[0].img}
+        className="small-player"/>
+      <div>
+        <audio
+          src={playlist[0].src}
+          id="Audio"
+          controls
+          autoPlay/>
+      </div>
+    </footer>
+  ) : null;
+};
+// class AudioPlayer extends React.Component {
+//   constructor(props) {
+//     super(props);
+//
+//     this.state = {
+//       player: null,
+//       isPlaying: undefined
+//     };
+//   }
+//
+//   componentDidMount() {
+//     debugger;
+//     if (!this.state.player) {
+//       debugger;
+//       const player = this.refs.audioPlayer;
+//       if (player) {
+//         debugger;
+//         window.player = player;
+//         const isPlaying = player.playing;
+//         this.setState({player, isPlaying});
+//       }
+//     }
+//   }
+//
+//   render () {
+//     const {playlist} = this.props;
+//     debugger;
+//     return (
+//         <footer>
+//           <img
+//             src={playlist[0].img}
+//             className="small-player" />
+//           <div>
+//             <audio
+//               ref="audioPlayer"
+//               id="Audio"
+//               src={`${playlist[0].src}`}
+//               controls
+//               autoPlay/>
+//           </div>
+//         </footer>
+//     );
+//   }
+// }
 
 export default AudioPlayer;
 
