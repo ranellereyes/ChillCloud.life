@@ -8,6 +8,7 @@ $light-gray: #e2e2e2;
   width: 70%;
   font-size: 44px;
   font-family: 'Monsterrat', sans-serif;
+  margin-bottom: 45px;
 
   label {
     padding: 20px;
@@ -36,8 +37,8 @@ $light-gray: #e2e2e2;
 }
 .side-bar-list {
   flex-grow: 1;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 36px;
+  margin-right: 36px;
   max-width: 240px;
   width: 25%;
   border-left: 2px solid $light-gray;
