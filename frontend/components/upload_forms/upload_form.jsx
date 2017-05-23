@@ -29,17 +29,17 @@ class UploadForm extends React.Component {
 		this.props.closeModal();
 	}
 
-	// componentDidUpdate() {
-	// 	if (this.props.songs.redirect) {
-	// 		this.props.closeModal();
-	//
-	// 		if (this.props.songs.redirect === "stream") {
-	// 			this.props.history.push(`/stream`);
-	// 		} else {
-	// 			this.props.history.push(`/songs/${this.props.songs.redirect.id}`);
-	// 		}
-	// 	}
-	// }
+	componentDidUpdate() {
+		if (this.props.songs.redirect) {
+			this.props.closeModal();
+
+			if (this.props.songs.redirect === "stream") {
+				this.props.history.push(`/stream`);
+			} else {
+				this.props.history.push(`/songs/${this.props.songs.redirect.id}`);
+			}
+		}
+	}
 
 	update(field){
     if (["source", "image_url"].includes(field)) {
@@ -105,6 +105,9 @@ class UploadForm extends React.Component {
 								onChange={this.update("genre")}
 								className="login-input" />
               <label className="form-text"> Genre:
+								<label className="sublabel">
+									(optional)
+								</label>
 						</label>
 
             <br />
@@ -121,6 +124,9 @@ class UploadForm extends React.Component {
                 className="login-input" />
               <label className="form-text">
                 Cover Image
+								<label className="sublabel">
+									(optional)
+								</label>
               </label>
 						<div>
 							{ this.renderErrors() }

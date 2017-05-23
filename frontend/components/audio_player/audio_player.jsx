@@ -21,10 +21,8 @@ class AudioPlayer extends React.Component {
 
   render() {
     const { playlist } = this.props;
-    debugger;
 
-    return (playlist.length > 0) ?
-    (
+    return (playlist.length > 0) ? (
       <footer>
         <marquee>
           {`Currently Playing: "${playlist[0].name}" - ${playlist[0].artist}`}

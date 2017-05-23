@@ -53,12 +53,15 @@ class SongView extends React.Component {
     this.closeForm();
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getSong(this.props.match.params.song_id);
   }
 
   componentWillReceiveProps(nextProps) {
     if (!nextProps.songs.redirect) { this.closeForm(); }
+    if (nextProps.songs.id != this.props.match.params.song_id) {
+      this.props.getSong(this.props.match.params.song_id);
+    }
   }
 
   componentDidUpdate() {
@@ -68,9 +71,6 @@ class SongView extends React.Component {
       this.closeForm();
       this.props.getSong(this.props.match.params.song_id);
     }
-    //  else {
-    //   this.closeForm();
-    // }
   }
 
 
@@ -101,7 +101,7 @@ class SongView extends React.Component {
           <SongItem
             song={songs}
             currentUser={currentUser}
-            play={this.props.play} />
+            queue={this.props.queue} />
         </div>
         <Modal
           isOpen={this.state.isOpen}
