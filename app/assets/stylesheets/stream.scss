@@ -59,8 +59,9 @@ $light-gray: #e2e2e2;
   label {
     margin: 10px;
     font-size: 20px;
-    font-family: "Monsterrat", sans-serif;
+    font-family: "Oswald", sans-serif;
     text-align: center;
+    border-bottom: 2px solid $light-gray;
   }
 
   a {

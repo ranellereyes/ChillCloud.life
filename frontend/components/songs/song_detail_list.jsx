@@ -13,16 +13,16 @@ class SongDetailList extends React.Component {
 
   render () {
     const songs = this.props.songs;
-
-    if (Object.keys(songs)[0] === "id") { return null; }
+    debugger;
+    if (Object.keys(songs).length < 1) { return null; }
 
     return (
       <ul className="stream-list">
         <label>Stream!</label>
-        {Object.keys(songs).map((key) => (
-          <li key={`song-${key}`}>
+        {songs.map((song, i) => (
+          <li key={`song-${i}`}>
             <SongItem
-              song={songs[key]}
+              song={song}
               currentUser={this.props.currentUser}
               play={this.props.play}
               pause={this.props.pause}
@@ -31,6 +31,22 @@ class SongDetailList extends React.Component {
         ))}
       </ul>
     );
+
+    // return (
+    //   <ul className="stream-list">
+    //     <label>Stream!</label>
+    //     {Object.keys(songs).map((key) => (
+    //       <li key={`song-${key}`}>
+    //         <SongItem
+    //           song={songs[key]}
+    //           currentUser={this.props.currentUser}
+    //           play={this.props.play}
+    //           pause={this.props.pause}
+    //         />
+    //       </li>
+    //     ))}
+    //   </ul>
+    // );
   }
 }
 

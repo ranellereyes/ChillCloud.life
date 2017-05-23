@@ -11,7 +11,8 @@ const AudioPlayerReducer = (state = [], action) => {
       return [{
         name: action.song.title,
         src: action.song.song_details.source,
-        img: action.song.image_url
+        img: action.song.image_url,
+        artist: action.song.artist
       }];
     case QUEUE_SONG:
       const newSong = {

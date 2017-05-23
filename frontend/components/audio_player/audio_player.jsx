@@ -5,6 +5,9 @@ const AudioPlayer = ({playlist}) => {
   return playlist.length > 0 ?
   (
     <footer>
+      <marquee>
+        {`Currently Playing - ${playlist[0].name} by: ${playlist[0].artist}`}
+      </marquee>
       <img
         src={playlist[0].img}
         className="small-player"/>

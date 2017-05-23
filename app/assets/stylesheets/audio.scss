@@ -1,0 +1,36 @@
+$light-gray: #e2e2e2;
+
+#Audio {
+  width: 100%;
+  height: 40px;
+  color: black;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  marquee {
+    font-family: "Oswald", sans-serif;
+    width: 20%;
+    position: fixed;
+    background-color: white;
+    bottom: 44px;
+    border-top: 2px solid $light-gray;
+    border-left: 2px solid $light-gray;
+    border-right: 2px solid $light-gray;
+    border-radius: 4px;
+  }
+}
+
+footer > div {
+  border-top: 2px solid $light-gray;
+  border-left: 2px solid $light-gray;
+  border-right: 2px solid $light-gray;
+  border-radius: 4px;
+  background-color: white;
+}

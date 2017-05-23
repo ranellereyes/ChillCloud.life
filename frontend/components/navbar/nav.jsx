@@ -122,7 +122,7 @@ class Nav extends React.Component {
         </div>
         <div className="right-nav-btns">
           <img
-            src={`${user.image}`}
+            src={`${user ? user.image : ''}`}
             className="mini" />
           <p
             className="form-text">
