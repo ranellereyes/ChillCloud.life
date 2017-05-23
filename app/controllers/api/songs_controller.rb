@@ -30,16 +30,8 @@ class Api::SongsController < ApplicationController
   end
 
 	def destroy
-		@song = Song.find_by(id: params[:id])
-		if @song
-      @song.destroy
-			render "api/songs/show"
-		else
-			render(
-        json: ["Song not found in database"],
-        status: 404
-      )
-		end
+		@song = Song.find(params[:id])
+    @song.destroy
 	end
 
   private

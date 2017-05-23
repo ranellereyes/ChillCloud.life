@@ -96,7 +96,11 @@ class Nav extends React.Component {
     const loggedInNav = (
       <div className="nav-par">
         <div className="left-nav-btns">
-          <div className="title">ChillCloud</div>
+          <div className="title">
+            <Link to="/stream">
+              ChillCloud
+            </Link>
+          </div>
             <Modal
               isOpen={this.state.uploadFormIsOpen}
               contentLabel="form"

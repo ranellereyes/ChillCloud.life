@@ -9,8 +9,8 @@ class UploadForm extends React.Component {
 			id: props.songs.id,
 			title: props.songs.title,
 			user_id: props.currentUser,
-			source: props.songs.source,
-			image_url: props.songs.image_url,
+			source: null,
+			image_url: null,
 			genre: props.songs.genre
 		} : {
 			title: "",
@@ -62,7 +62,9 @@ class UploadForm extends React.Component {
     const data = this.state;
 
 	  Object.keys(data).forEach(key => {
-      formData.append(`song[${key}]`, data[key]);
+			if (data[key] !== null) {
+				formData.append(`song[${key}]`, data[key]);
+			}
     });
 
     this.props.type === "update" ?
@@ -104,11 +106,12 @@ class UploadForm extends React.Component {
 								value={this.state.genre || ''}
 								onChange={this.update("genre")}
 								className="login-input" />
-              <label className="form-text"> Genre:
-								<label className="sublabel">
-									(optional)
-								</label>
-						</label>
+              <label className="form-text">
+								Genre:
+							</label>
+							<label className="sublabel">
+								(optional)
+							</label>
 
             <br />
               <input type="file"
@@ -124,10 +127,10 @@ class UploadForm extends React.Component {
                 className="login-input" />
               <label className="form-text">
                 Cover Image
-								<label className="sublabel">
-									(optional)
-								</label>
               </label>
+							<label className="sublabel">
+								(optional)
+							</label>
 						<div>
 							{ this.renderErrors() }
 						</div>

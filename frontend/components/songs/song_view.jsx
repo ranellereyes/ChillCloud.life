@@ -58,21 +58,24 @@ class SongView extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!nextProps.songs.redirect) { this.closeForm(); }
-    if (nextProps.songs.id != this.props.match.params.song_id) {
+    debugger;
+    // if (!nextProps.songs.redirect) {
+    //   this.closeForm();
+    // } else
+    if (nextProps.songs.id !== parseInt(this.props.match.params.song_id) &&
+      Boolean(nextProps.songs.id)) {
       this.props.getSong(this.props.match.params.song_id);
     }
   }
+
 
   componentDidUpdate() {
     if (this.props.songs.redirect === "stream") {
       this.props.history.push(`/stream`);
     } else if (this.props.songs.redirect === "success") {
       this.closeForm();
-      this.props.getSong(this.props.match.params.song_id);
     }
   }
-
 
   delete() {
     this.props.deleteSong(this.props.match.params.song_id);
