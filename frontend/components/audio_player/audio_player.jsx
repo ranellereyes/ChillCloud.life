@@ -6,7 +6,7 @@ const AudioPlayer = ({playlist}) => {
   (
     <footer>
       <marquee>
-        {`Currently Playing - ${playlist[0].name} by: ${playlist[0].artist}`}
+        {`Currently Playing: "${playlist[0].name}" - ${playlist[0].artist}`}
       </marquee>
       <img
         src={playlist[0].img}

@@ -13,8 +13,8 @@ class SongDetailList extends React.Component {
 
   render () {
     const songs = this.props.songs;
-    debugger;
-    if (Object.keys(songs).length < 1) { return null; }
+
+    if (!Array.isArray(songs)) { return null; }
 
     return (
       <ul className="stream-list">
