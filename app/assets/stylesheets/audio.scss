@@ -23,7 +23,7 @@ footer {
 
   marquee {
     font-family: "Oswald", sans-serif;
-    width: 20%;
+    width: 200px;
     position: fixed;
     background-color: white;
     right: 80px;
@@ -40,6 +40,12 @@ footer {
   }
 }
 
+span {
+  width: inherit;
+  height: inherit;
+  position: relative;
+}
+
 footer > div {
   position: relative;
 
@@ -50,4 +56,34 @@ footer > div {
     left: 8px;
     bottom: 5px;
   }
+}
+
+.dropdown {
+  font-family: "Oswald", sans-serif;
+  width: 20%;
+  position: fixed;
+  background-color: white;
+  right: 80px;
+  bottom: 42px;
+  border-top: 2px solid $light-gray;
+  border-left: 2px solid $light-gray;
+  border-right: 2px solid $light-gray;
+  border-radius: 4px;
+  z-index: 5;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    bottom: 67px;
+    right: 86px;
+    background-color: #f9f9f9;
+    width: 185px;
+    min-width: 160px;
+    padding: 4px 6px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

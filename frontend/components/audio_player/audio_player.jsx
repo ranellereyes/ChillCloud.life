@@ -24,12 +24,21 @@ class AudioPlayer extends React.Component {
 
     return (playlist.length > 0) ? (
       <footer>
+        <span className="dropdown">
         <marquee>
           {`Currently Playing: "${playlist[0].name}" - ${playlist[0].artist}`}
         </marquee>
+        <ul className="dropdown-content">
+          <li key="title">In queue:</li>
+          {playlist.slice(1).reverse().map((song, i) => (
+            <li key={`play-${i}`}>{song.name}</li>
+          ))}
+        </ul>
+
         <img
           src={playlist[0].img}
           className="small-player"/>
+        </span>
         <div>
           <img
             src="https://image.flaticon.com/icons/svg/149/149660.svg"
