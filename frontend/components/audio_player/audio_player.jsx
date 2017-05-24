@@ -79,12 +79,9 @@ export default AudioPlayer;
 //   }
 //
 //   componentDidMount() {
-//     debugger;
 //     if (!this.state.player) {
-//       debugger;
 //       const player = this.refs.audioPlayer;
 //       if (player) {
-//         debugger;
 //         window.player = player;
 //         const isPlaying = player.playing;
 //         this.setState({player, isPlaying});
@@ -94,7 +91,6 @@ export default AudioPlayer;
 //
 //   render () {
 //     const {playlist} = this.props;
-//     debugger;
 //     return (
 //         <footer>
 //           <img

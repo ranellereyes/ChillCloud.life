@@ -58,7 +58,6 @@ class SongView extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger;
     // if (!nextProps.songs.redirect) {
     //   this.closeForm();
     // } else
@@ -104,7 +103,8 @@ class SongView extends React.Component {
           <SongItem
             song={songs}
             currentUser={currentUser}
-            queue={this.props.queue} />
+            queue={this.props.queue}
+            play={this.props.play} />
         </div>
         <Modal
           isOpen={this.state.isOpen}
