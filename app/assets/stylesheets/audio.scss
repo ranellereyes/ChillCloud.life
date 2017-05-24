@@ -21,6 +21,11 @@ footer {
   bottom: 0;
   right: 0;
 
+  * {
+    display: flex;
+    z-index: 5;
+  }
+
   marquee {
     font-family: "Oswald", sans-serif;
     width: 200px;

@@ -192,7 +192,8 @@ class SongView extends React.Component {
                 onChange={this.update}>
               </input>
               {this.renderErrors()}
-              <button onClick={this._handleSubmit}>
+              <button
+                onClick={this._handleSubmit}>
                 Comment!
               </button>
               </div>
@@ -217,9 +218,6 @@ class SongView extends React.Component {
             </ul>
           <ul className="artist-similar">
             Similar songs from {songs.artist}!
-            <img
-              src={songs.artistAvatar}
-              className="avatar-round"/>
           </ul>
         </div>
       </main>

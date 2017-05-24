@@ -74,6 +74,14 @@ $nth: nth($list, $imgKey);
   align-items: center;
   width: 100%;
   border-bottom: 2px solid $light-gray;
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    font-family: 'monsterrat', sans-serif;
+  }
 }
 
 .comments-button {
