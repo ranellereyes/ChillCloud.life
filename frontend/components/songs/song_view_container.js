@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import {
   actionGetSong,
-  actionDeleteSong
+  actionDeleteSong,
+  actionAddComment,
+  actionDeleteComment
  } from '../../actions/song_actions';
 import {
   actionPlaySong,
@@ -18,7 +20,9 @@ const mapDispatchToProps = dispatch => ({
   getSong: (id) => dispatch(actionGetSong(id)),
   deleteSong: (id) => dispatch(actionDeleteSong(id)),
   play: (song) => dispatch(actionPlaySong(song)),
-  queue: (song) => dispatch(actionQueueSong(song))
+  queue: (song) => dispatch(actionQueueSong(song)),
+  comment: (comment) => dispatch(actionAddComment(comment)),
+  deleteComment: (id) => dispatch(actionDeleteComment(id))
 });
 
 export default connect(

@@ -1,5 +1,6 @@
 // API UTIL
 import * as APIUtil from '../util/song_util';
+import * as CommentUtil from '../util/comment_util';
 import {
   RECEIVE_ERRORS,
   CLEAR_ERRORS,
@@ -25,6 +26,20 @@ export const PAUSE_SONG = "PAUSE_SONG";
 // export const EDIT_SONG = "EDIT_SONG";
 
 // ASYNC ACTIONS
+
+export const actionAddComment = (comment) => dispatch => {
+  return CommentUtil.createCommentRequest(comment).then(
+    resp => dispatch(receiveSong(resp)),
+    e => errorHandle(e, dispatch)
+  );
+};
+
+export const actionDeleteComment = (id) => dispatch => {
+  return CommentUtil.deleteCommentRequest(id).then(
+    resp => dispatch(receiveSong(resp)),
+    e => errorHandle(e, dispatch)
+  );
+};
 
 export const actionGetSong = (id) => dispatch => {
   return APIUtil.songRequest(id).then(

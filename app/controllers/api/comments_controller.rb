@@ -3,7 +3,8 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
-      render "api/comments/show"
+      @song = @comment.song
+      render "api/songs/show"
     else
       render json: @comment.errors.full_messages, status: 422
     end
@@ -12,11 +13,13 @@ class Api::CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
+    @song = @comment.song
+    render "api/songs/show"
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:id, :song_id, :user_id)
+    params.require(:comment).permit(:id, :song_id, :user_id, :body)
   end
 end

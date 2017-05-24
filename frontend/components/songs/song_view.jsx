@@ -33,6 +33,7 @@ class SongView extends React.Component {
 
     this.state = {
       isOpen: false,
+      comment: '',
       rand: `https://s3-us-west-1.amazonaws.com/chillcloud-dev/stock/cover${Math.ceil(8 * Math.random())}.jpg`
     };
 
@@ -41,6 +42,10 @@ class SongView extends React.Component {
     this.delete = this.delete.bind(this);
     this.playSong = this.playSong.bind(this);
     this.queueSong = this.queueSong.bind(this);
+    this.comment = this.props.comment.bind(this);
+    this.deleteComment = this.props.deleteComment.bind(this);
+    this.update = this.update.bind(this);
+    this._handleSubmit = this._handleSubmit.bind(this);
     // this.props.getSong = this.props.getSong.bind(this);
   }
 
@@ -61,20 +66,12 @@ class SongView extends React.Component {
     this.props.getSong(this.props.match.params.song_id);
   }
 
-  playSong () {
-    this.props.play(this.props.songs);
-  }
-
-  queueSong () {
-    this.props.queue(this.props.songs);
-  }
-
   componentWillReceiveProps(nextProps) {
     // if (!nextProps.songs.redirect) {
     //   this.closeForm();
     // } else
     if (nextProps.songs.id !== parseInt(this.props.match.params.song_id) &&
-      Boolean(nextProps.songs.id)) {
+    Boolean(nextProps.songs.id)) {
       this.props.getSong(this.props.match.params.song_id);
     }
   }
@@ -87,9 +84,43 @@ class SongView extends React.Component {
     }
   }
 
+  playSong () {
+    this.props.play(this.props.songs);
+  }
+
+  queueSong () {
+    this.props.queue(this.props.songs);
+  }
+
   delete() {
     this.props.deleteSong(this.props.match.params.song_id);
   }
+
+  update(e) {
+		this.setState({comment: e.currentTarget.value });
+	}
+
+	_handleSubmit() {
+    let item = {
+      user_id: this.props.currentUser.id,
+      song_id: this.props.songs.id,
+      body: this.state.comment
+    };
+    debugger;
+    this.props.comment(item);
+	}
+
+	renderErrors(){
+		return(
+			<ul className='errors'>
+				{this.props.errors.map( (error, i) => (
+					<li key={`error-${i}`}>
+						{error}
+					</li>
+				))}
+			</ul>
+		);
+	}
 
   render () {
     const {songs, currentUser} = this.props;
@@ -112,7 +143,7 @@ class SongView extends React.Component {
       backgroundImage: `url(${this.state.rand})`
     };
 
-    return Object.keys(songs).length !== 0 ? (
+    return (!Array.isArray(songs) && Object.keys(songs).length > 0) ? (
       <main className="song-view-main">
         <div
           className="song-view"
@@ -153,12 +184,25 @@ class SongView extends React.Component {
               <div className="comment-header">
               <img
                 src={currentUser.image}
-                className="avatar-round" />
+                className="mini" />
               <input
-                type="text">
+                type="text"
+                value={this.state.comment}
+                onChange={this.update}>
               </input>
-                Comments!
+              <button onClick={this._handleSubmit}>
+                Comment!
+              </button>
               </div>
+            {songs.comments.map((comment, i) => (
+              <li key={`com-${i}`}>{comment.body}
+                {comment.user === currentUser.username ?
+                  <button onClick={() => {debugger;
+                      this.deleteComment(comment.id);}}/> :
+                    null}
+              </li>
+            ))}
+
             </ul>
           <ul className="artist-similar">
             Similar songs from {songs.artist}!
