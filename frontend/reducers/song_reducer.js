@@ -11,12 +11,6 @@ import {
 
 import merge from 'lodash/merge';
 
-// const _defaultSong = {
-//   image_url: 'http://i.imgur.com/l7TtZHS.jpg',
-//   genre: '',
-//   length: ''
-// };
-
 const SongReducer = function(state = {}, action){
   switch(action.type){
     case REDIRECT:
