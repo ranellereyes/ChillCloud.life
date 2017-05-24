@@ -71,8 +71,9 @@ input {
   font-weight: 600;
   text-shadow: 2px 2px $shadow;
   color: white;
-  margin-left: 15px;
+  margin-left: 10px;
   margin-right: 7.5px;
+  font-size: 22px;
 }
 
 .form-title {
@@ -150,7 +151,7 @@ input {
 
 .left-nav-btns {
   display: flex;
-  align-content: center;
+  align-items: center;
 }
 
 button {

@@ -68,8 +68,8 @@ $shadow: rgb(77, 76, 76);
   flex-direction: column;
 
   button {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 
   section {
@@ -86,6 +86,17 @@ $shadow: rgb(77, 76, 76);
   display: flex;
   flex-direction: column;
   margin-left: 10px;
+
+  li {
+    margin: 3px;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+  align-items: center;
 }
 
 .play-button {
@@ -110,4 +121,17 @@ $shadow: rgb(77, 76, 76);
     border-style: solid;
     border-width: 9.5px 0 9.5px 17px;
     border-color: transparent transparent transparent rgba(255, 255, 255, 1);
+}
+
+.queue-button {
+    height: 18px;
+    width: 45px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    position: relative;
+    font-weight: 900;
+}
+
+.queue-button:hover {
+    background-color: rgba(0, 173, 239, 0.9);
 }

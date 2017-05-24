@@ -24,10 +24,15 @@ export const SongItem = ({match, song, currentUser, play, queue}) => {
       <img src={song.image_url} />
       <div className="second-col">
         <section>
-          <button
-            className="play-button"
-            onClick={queueSong}
-            />
+          <div className="buttons">
+            <button
+              className="play-button"
+              onClick={playSong}
+              />
+            <button
+              className="queue-button"
+              onClick={queueSong}>+</button>
+          </div>
           <ul className="details">
             <li key={`title-${song.id}`}>{song.title}</li>
             <li key={`artist-${song.id}`}>{song.artist}</li>
