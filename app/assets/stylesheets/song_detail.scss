@@ -47,11 +47,33 @@ $nth: nth($list, $imgKey);
 
 }
 
+.comment-disp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.delete-button {
+  width: 12px;
+  height: 12px;
+  content: "x";
+  border-radius: 50%;
+  font-size: 10px;
+  color: white;
+  font-weight: 800;
+  font-family: 'monsterrat', sans-serif;
+}
+
+.delete-button:hover {
+  color: red;
+}
+
 .comment-header {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
+  border-bottom: 2px solid $light-gray;
 }
 
 .comments-button {

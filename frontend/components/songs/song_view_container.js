@@ -13,7 +13,8 @@ import SongView from './song_view';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
-  songs: state.songs
+  songs: state.songs,
+  errors: state.errors
 });
 
 const mapDispatchToProps = dispatch => ({

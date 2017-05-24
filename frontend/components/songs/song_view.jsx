@@ -106,7 +106,8 @@ class SongView extends React.Component {
       song_id: this.props.songs.id,
       body: this.state.comment
     };
-    debugger;
+
+    this.setState({comment: ''});
     this.props.comment(item);
 	}
 
@@ -190,15 +191,25 @@ class SongView extends React.Component {
                 value={this.state.comment}
                 onChange={this.update}>
               </input>
+              {this.renderErrors()}
               <button onClick={this._handleSubmit}>
                 Comment!
               </button>
               </div>
             {songs.comments.map((comment, i) => (
-              <li key={`com-${i}`}>{comment.body}
+              <li
+                key={`com-${i}`}
+                className="comment-disp">
+                <img
+                  src={comment.avatar}
+                  className="mini"/>
+                {comment.body}
                 {comment.user === currentUser.username ?
-                  <button onClick={() => {debugger;
-                      this.deleteComment(comment.id);}}/> :
+                  <button
+                    onClick={
+                      () => { this.deleteComment(comment.id); }
+                    }
+                    className="delete-button">X</button> :
                     null}
               </li>
             ))}
