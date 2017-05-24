@@ -29,6 +29,7 @@ $nth: nth($list, $imgKey);
     height: 320px;
     width: 320px;
     margin-right: 30px;
+    border: 2px solid $shadow;
   }
 
   section {
@@ -46,12 +47,19 @@ $nth: nth($list, $imgKey);
 
 }
 
-// .comments {
-//   position: absolute;
-//   bottom: 0;
-//   right: 0;
-//   margin: 12px;
-// }
+.comment-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.comments-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 12px;
+}
 
 .genre {
   background-color: $light-gray;
@@ -75,6 +83,8 @@ $nth: nth($list, $imgKey);
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  margin-top: 20px;
+  border-top: 2px solid $light-gray;
 }
 
 .song-detail-comp {

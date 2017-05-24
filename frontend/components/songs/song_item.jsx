@@ -9,11 +9,11 @@ export const SongItem = ({match, song, currentUser, play, queue}) => {
 
   if (match.path !== "/songs/:song_id") {
     button = (
-      <button className="comments">
-        <Link to={`/songs/${song.id}`}>
+      <Link to={`/songs/${song.id}`}>
+        <button className="comments-button">
           Comments!
-        </Link>
-      </button>
+        </button>
+      </Link>
     );
   } else {
     button = null;

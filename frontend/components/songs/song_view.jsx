@@ -149,15 +149,23 @@ class SongView extends React.Component {
             type="update" />
         </Modal>
         <div className="bottom-view">
-          <ul className="comments">
-            <input
-              type="text">
-            </input>
-              Comments!
-          </ul>
+            <ul className="comments">
+              <div className="comment-header">
+              <img
+                src={currentUser.image}
+                className="avatar-round" />
+              <input
+                type="text">
+              </input>
+                Comments!
+              </div>
+            </ul>
           <ul
             className="artist-similar">
-            Similar songs from this artist!
+            Similar songs from {songs.artist}!
+            <img
+              src={songs.artistAvatar}
+              className="avatar-round"/>
           </ul>
         </div>
       </main>
