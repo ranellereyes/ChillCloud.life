@@ -20,7 +20,9 @@ class AudioPlayer extends React.Component {
   // }
 
   render() {
-    const { playlist } = this.props;
+    const { playlist, currentUser } = this.props;
+
+    if (!currentUser.id) { return null; }
 
     return (playlist.length > 0) ? (
       <footer>

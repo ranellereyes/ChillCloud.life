@@ -7,7 +7,8 @@ import {
 import AudioPlayer from './audio_player';
 
 const mapStateToProps = state => ({
-  playlist: state.playlist
+  playlist: state.playlist,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
