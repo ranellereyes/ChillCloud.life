@@ -10,6 +10,7 @@ class User < ApplicationRecord
   before_validation :ensure_unique_token
 
   has_many :songs
+  has_many :comments
 
   attr_reader :password
 

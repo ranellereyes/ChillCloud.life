@@ -160,8 +160,7 @@ class SongView extends React.Component {
                 Comments!
               </div>
             </ul>
-          <ul
-            className="artist-similar">
+          <ul className="artist-similar">
             Similar songs from {songs.artist}!
             <img
               src={songs.artistAvatar}
