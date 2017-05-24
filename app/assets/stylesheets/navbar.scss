@@ -159,13 +159,14 @@ input {
 }
 
 button {
+  font-size: 16px;
   border-radius: 8px;
   background-color: $light-blue;
   border: $dark-blue;
   color: white;
   text-align: center;
   font-size: 13px;
-  padding: 3px;
+  padding: 2px;
   width: 75px;
   height: 22px;
   transition: all 0.3s;
