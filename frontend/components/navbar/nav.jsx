@@ -101,21 +101,6 @@ class Nav extends React.Component {
               ChillCloud
             </Link>
           </div>
-            <Modal
-              isOpen={this.state.uploadFormIsOpen}
-              contentLabel="form"
-              onRequestClose={this.closeUploadForm}
-              style={modalUploadStyle}
-            >
-              <UploadFormContainer
-                closeModal={this.closeUploadForm}
-                type="upload" />
-            </Modal>
-            <button onClick={this.openUploadForm}>
-              <span>
-                Upload
-              </span>
-            </button>
           <Link to="/stream">
             <button>
               <span>
@@ -125,6 +110,21 @@ class Nav extends React.Component {
           </Link>
         </div>
         <div className="right-nav-btns">
+          <Modal
+            isOpen={this.state.uploadFormIsOpen}
+            contentLabel="form"
+            onRequestClose={this.closeUploadForm}
+            style={modalUploadStyle}
+          >
+            <UploadFormContainer
+              closeModal={this.closeUploadForm}
+              type="upload" />
+          </Modal>
+          <button onClick={this.openUploadForm}>
+            <span>
+              Upload
+            </span>
+          </button>
           <img
             src={`${user ? user.image : ''}`}
             className="mini" />

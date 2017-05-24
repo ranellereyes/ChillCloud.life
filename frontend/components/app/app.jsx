@@ -9,6 +9,7 @@ import SongViewContainer from "../songs/song_view_container";
 import {AuthRoute, ProtectedRoute} from '../../util/route_util';
 import LoadingContainer from './loading_container';
 import AudioPlayerContainer from '../audio_player/audio_player_container';
+import UserViewContainer from '../user_view/user_view_container';
 // TEST
 import GreetingContainer from '../greeting/greeting_container';
 
@@ -24,6 +25,7 @@ const App = ({current_user}) => {
           <AuthRoute exact path="/" component={Splash} />
           <ProtectedRoute path="/stream" component={Stream} />
           <ProtectedRoute path="/songs/:song_id" component={SongViewContainer} />
+          <ProtectedRoute path="/users/:user_id" component={UserViewContainer} />
         </Switch>
       </main>
       <AudioPlayerContainer />

@@ -12,7 +12,8 @@ class SideBar extends React.Component {
 
   render () {
     const users = this.props.users;
-    if (Object.keys(users).length === 0) { return null; }
+
+    if (Object.keys(users).length === 0 || !Array.isArray(users)) { return null; }
 
     return (
       <ul className="side-bar-list">

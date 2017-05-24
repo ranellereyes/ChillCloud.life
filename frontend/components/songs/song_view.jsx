@@ -2,7 +2,7 @@ import React from 'react';
 import SongItem from './song_item';
 import UploadFormContainer from '../upload_forms/upload_form_container';
 import Modal from 'react-modal';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import AudioPlayerContainer from '../audio_player/audio_player_container';
 
 const modalUploadStyle = {
@@ -201,9 +201,11 @@ class SongView extends React.Component {
               <li
                 key={`com-${i}`}
                 className="comment-disp">
-                <img
-                  src={comment.avatar}
-                  className="mini"/>
+                <Link to={`/users/${comment.user_id}`}>
+                  <img
+                    src={comment.avatar}
+                    className="mini"/>
+              </Link>
                 {comment.body}
                 {comment.user === currentUser.username ?
                   <button
@@ -218,6 +220,7 @@ class SongView extends React.Component {
             </ul>
           <ul className="artist-similar">
             Similar songs from {songs.artist}!
+
           </ul>
         </div>
       </main>
