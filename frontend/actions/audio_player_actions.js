@@ -4,6 +4,7 @@ import { errorHandle } from './errors_actions';
 export const QUEUE_SONG = "QUEUE_SONG";
 export const PLAY_SONG = "PLAY_SONG";
 export const NEXT_SONG = "NEXT_SONG";
+export const CLEAR_PLAYLIST = "CLEAR_PLAYLIST";
 
 export const actionQueueSong = (song) => ({
     type: QUEUE_SONG,

@@ -10,19 +10,21 @@ class AudioPlayer extends React.Component {
       player: document.getElementById("Audio")
     };
 
+
     // this.playNext = this.playNext.bind(this);
     window.playlist = this.state.playlist;
   }
 
-  // playNext() {
-  //   let newPlaylist = this.props.playlist.slice(1);
-  //   this.setState({playlist: newPlaylist});
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.currentUser && this.props.playlist.length !== 0) {
+      this.props.clear();
+    }
+  }
 
   render() {
-    const { playlist, currentUser } = this.props;
+    const { playlist } = this.props;
 
-    if (!currentUser.id) { return null; }
+    if (!this.props.currentUser) { return null; }
 
     return (playlist.length > 0) ? (
       <footer>

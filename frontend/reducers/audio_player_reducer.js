@@ -1,13 +1,14 @@
 import {
   QUEUE_SONG,
   PLAY_SONG,
-  NEXT_SONG
+  NEXT_SONG,
+  CLEAR_PLAYLIST
 } from '../actions/audio_player_actions';
 import { merge } from 'lodash';
 
 const AudioPlayerReducer = (state = [], action) => {
   Object.freeze(state);
-  
+
   switch (action.type) {
     case PLAY_SONG:
       const nextSong = [{
@@ -38,6 +39,9 @@ const AudioPlayerReducer = (state = [], action) => {
 
     case NEXT_SONG:
       return state.slice(1);
+
+    case CLEAR_PLAYLIST:
+      return [];
 
     default:
       return state;
