@@ -12,6 +12,11 @@ $light-gray: #e2e2e2;
 
   label {
     padding: 20px;
+    margin-left: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $light-gray;
   }
 
   li {

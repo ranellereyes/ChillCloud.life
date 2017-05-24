@@ -100,6 +100,7 @@ $shadow: rgb(77, 76, 76);
 }
 
 .play-button {
+    padding: 0px;
     height: 40px;
     width: 65px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -124,6 +125,7 @@ $shadow: rgb(77, 76, 76);
 }
 
 .queue-button {
+    padding: 1px;
     height: 18px;
     width: 45px;
     background-color: rgba(0, 0, 0, 0.7);
