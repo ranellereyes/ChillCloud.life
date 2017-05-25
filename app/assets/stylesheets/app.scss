@@ -55,5 +55,14 @@ main {
   height: 80px;
   z-index: 5;
   border-radius: 50%;
+  object-fit: cover;
   border: 2px solid gray;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  background-color: rgba(0, 173, 239, 0.9);
 }

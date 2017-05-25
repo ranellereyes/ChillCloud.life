@@ -171,7 +171,8 @@ class SongView extends React.Component {
                 <li key={`title-${songs.id}`}>{songs.title}</li>
                 <li
                   key={`artist-${songs.id}`}
-                  onClick={this.reroute}>{songs.artist}</li>
+                  onClick={this.reroute}
+                  className="link">{songs.artist}</li>
               </ul>
             </section>
             {currentUser.id === songs.user_id ? buttons : null}
@@ -227,7 +228,7 @@ class SongView extends React.Component {
 
             </ul>
           <ul
-            className="artist-similar"
+            className="artist-similar link"
             onClick={this.reroute}>
             Similar songs from {songs.artist}!
 
