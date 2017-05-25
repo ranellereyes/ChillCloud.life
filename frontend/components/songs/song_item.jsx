@@ -1,47 +1,45 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-export const SongItem = ({match, song, currentUser, play, queue}) => {
+export const SongItem = ({match, song, currentUser, play, queue, history}) => {
   let button;
 
-  const playSong = () => (play(song));
+  const playSong = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    play(song);
+  };
   const queueSong = () => (queue(song));
 
-  if (match.path !== "/songs/:song_id") {
-    button = (
-      <Link to={`/songs/${song.id}`}>
-        <button className="comments-button">
-          Comments!
-        </button>
-      </Link>
-    );
-  } else {
-    button = null;
-  }
+
+  const reroute = (e) => {
+    e.stopPropagation();
+    history.push(`/songs/${song.id}`);
+  };
 
   return (
-    <div className="song-detail-comp">
-      <img src={song.image_url} />
-      <div className="second-col">
-        <section>
-          <div className="buttons">
-            <button
-              className="play-button"
-              onClick={playSong}
-              />
-            <button
-              className="queue-button"
-              onClick={queueSong}>+</button>
+        <div className="song-detail-comp"
+          onClick={reroute}>
+          <img src={song.image_url} />
+          <div className="second-col">
+            <section>
+              <div className="buttons">
+                <button
+                  className="play-button"
+                  onClick={playSong}
+                  />
+                <button
+                  className="queue-button"
+                  onClick={queueSong}>+</button>
+              </div>
+              <ul className="details">
+                <li key={`title-${song.id}`}>{song.title}</li>
+                <li key={`artist-${song.id}`}>{song.artist}</li>
+              </ul>
+            </section>
           </div>
-          <ul className="details">
-            <li key={`title-${song.id}`}>{song.title}</li>
-            <li key={`artist-${song.id}`}>{song.artist}</li>
-          </ul>
-        </section>
-      </div>
-      {button}
-      <p className="genre">{song.genre ? `#${song.genre}` : null}</p>
-    </div>
+          <p className="genre">{song.genre ? `#${song.genre}` : null}</p>
+        </div>
   );
 };
 

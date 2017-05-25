@@ -26,6 +26,7 @@ class SongDetailList extends React.Component {
               currentUser={this.props.currentUser}
               play={this.props.play}
               queue={this.props.queue}
+              history={this.props.history}
             />
           </li>
         ))}

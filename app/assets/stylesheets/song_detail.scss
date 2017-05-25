@@ -217,6 +217,7 @@ $nth: nth($list, $imgKey);
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     position: relative;
+    z-index: 9;
 }
 
 .play-button:hover {
