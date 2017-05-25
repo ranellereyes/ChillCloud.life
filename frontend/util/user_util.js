@@ -12,10 +12,13 @@ export const singleUserRequest = (id) => (
   })
 );
 
-export const editUserRequest = (user) => (
+export const editUserRequest = (formData, id) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/users/${user.id}`,
-    data: {user}
+    url: `/api/users/${id}`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
   })
 );

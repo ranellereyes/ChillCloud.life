@@ -24,6 +24,12 @@ header {
   position: fixed;
 }
 
+.search-bar {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+}
+
 .background {
   width: 100vw;
   height: 100vh;
@@ -51,6 +57,10 @@ nav {
   height: inherit;
   margin: 0;
   z-index: 95;
+
+  i {
+    padding: 10px;
+  }
 }
 
 input {
@@ -99,6 +109,8 @@ input {
   color: black;
   text-shadow: 1px 1px $dark-gray;
   margin: 7.5px;
+  width: 100%;
+  text-align: center;
 }
 
 .errors {

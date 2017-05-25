@@ -28,8 +28,8 @@ export const actionUserView = (id) => dispatch => {
   );
 };
 
-export const actionEditUser = (user) => dispatch => {
-  return APIUtil.editUserRequest(user.id).then(
+export const actionEditUser = (user, id) => dispatch => {
+  return APIUtil.editUserRequest(user, id).then(
     res => dispatch(receiveUser(res)),
     e => errorHandle(e, dispatch)
   );

@@ -109,6 +109,10 @@ class Nav extends React.Component {
             </button>
           </Link>
         </div>
+        <i className="fa fa-search" aria-hidden="true"></i>
+        <input type="text"
+          className="search-bar"
+          placeholder="Currently Disabled" />
         <div className="right-nav-btns">
           <Modal
             isOpen={this.state.uploadFormIsOpen}

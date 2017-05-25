@@ -44,9 +44,10 @@ class AudioPlayer extends React.Component {
           className="small-player"/>
         </span>
         <div>
-          <img
-            src="https://image.flaticon.com/icons/svg/149/149660.svg"
-            onClick={this.props.next} />
+          <i
+            className="fa fa-fast-forward"
+            aria-hidden="true"
+            onClick={this.props.next}></i>
           <audio
             src={playlist[0].src}
             id="Audio"

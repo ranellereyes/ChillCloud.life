@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getUser: (id) => dispatch(actionUserView(id)),
-  edit: (user) => dispatch(actionEditUser(user)),
+  edit: (user, id) => dispatch(actionEditUser(user, id)),
   play: (song) => dispatch(actionPlaySong(song)),
   queue: (song) => dispatch(actionQueueSong(song))
 });
