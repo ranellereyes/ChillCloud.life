@@ -34,9 +34,8 @@ export const actionEditUser = (user, id) => dispatch => {
     res => dispatch(receiveUser(res)),
     e => errorHandle(e, dispatch)
   ).then(
-    resp => {
-      debugger;
+    resp => (
       dispatch(receiveCurrentUser(resp.user));
-    }
+    )
   );
 };

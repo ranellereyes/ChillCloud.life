@@ -46,6 +46,7 @@ class SongView extends React.Component {
     this.deleteComment = this.props.deleteComment.bind(this);
     this.update = this.update.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
+    this.reroute = this.reroute.bind(this);
     // this.props.getSong = this.props.getSong.bind(this);
   }
 
@@ -55,6 +56,11 @@ class SongView extends React.Component {
 
   closeForm () {
     this.setState({isOpen: false});
+  }
+
+  reroute (e) {
+    e.preventDefault();
+    this.props.history.push(`/users/${this.props.songs.user_id}`);
   }
 
   componentWillUnmount() {
@@ -163,12 +169,14 @@ class SongView extends React.Component {
               </div>
               <ul className="details">
                 <li key={`title-${songs.id}`}>{songs.title}</li>
-                <li key={`artist-${songs.id}`}>{songs.artist}</li>
+                <li
+                  key={`artist-${songs.id}`}
+                  onClick={this.reroute}>{songs.artist}</li>
               </ul>
             </section>
             {currentUser.id === songs.user_id ? buttons : null}
           </div>
-            <p className="genre">{songs.genre ? `#${songs.genre}` : null}</p>
+            <p className="genre-label">{songs.genre ? `#${songs.genre}` : null}</p>
         </div>
         <Modal
           isOpen={this.state.isOpen}
@@ -197,7 +205,7 @@ class SongView extends React.Component {
                 Comment!
               </button>
               </div>
-            {songs.comments.map((comment, i) => (
+            {Array.isArray(songs.comments) ? (songs.comments.map((comment, i) => (
               <li
                 key={`com-${i}`}
                 className="comment-disp">
@@ -215,10 +223,12 @@ class SongView extends React.Component {
                     className="delete-button">X</button> :
                     null}
               </li>
-            ))}
+            ))) : null}
 
             </ul>
-          <ul className="artist-similar">
+          <ul
+            className="artist-similar"
+            onClick={this.reroute}>
             Similar songs from {songs.artist}!
 
           </ul>

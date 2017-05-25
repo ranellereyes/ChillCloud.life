@@ -17,7 +17,7 @@ const stylin = {
     position        : 'fixed',
     margin          : 'auto',
     width           : '290px',
-    height          : '200px',
+    height          : '240px',
     border          : '1px solid #ccc',
     padding         : '20px',
     zIndex          : 11,
@@ -108,6 +108,9 @@ class UserView extends React.Component {
               aria-hidden="true"
               onClick={this.openForm}></i>
           </div> : null}
+          <ul className="user-details">
+            <li key={`user-${id}`}>{username}</li>
+          </ul>
         </div>
         <Modal
           isOpen={this.state.isOpen}
@@ -115,20 +118,29 @@ class UserView extends React.Component {
           onRequestClose={this.closeForm}
           style={stylin}
         >
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.update('username')}/>
-          <input
-            type="file"
-            onChange={this.update('image')}/>
-          <button
-            onClick={this.handleSubmit}>
-            Update!
-          </button>
+          <div className="login-form">
+            <p className="form-title">
+              ChillCloud
+            </p>
+            <input
+              type="text"
+              value={this.state.username}
+              onChange={this.update('username')}/>
+            <label className="form-text"> Username
+            </label>
+            <input
+              type="file"
+              onChange={this.update('image')}/>
+            <label className="form-text"> Profile Pic
+            </label>
+            <button
+              onClick={this.handleSubmit}>
+              Update!
+            </button>
+          </div>
         </Modal>
         <section>
-          <ul>
+          <ul className="user-view-body">
             <ul className="stream-list">
               {songs.map((song, i) => (
                 <li key={`song-${i}`}>
@@ -139,6 +151,34 @@ class UserView extends React.Component {
                   />
                 </li>
               ))}
+              {
+                (songs.length === 0) ? (
+                  <div className="blank-message">
+                    <li>It's too quiet here...</li>
+                    <li>Let's upload something!</li>
+                  </div>
+                ) : null
+              }
+            </ul>
+            <ul className="user-view-assoc">
+              <ul>
+                <div>
+                  <i className="fa fa-users" aria-hidden="true"></i>
+                    Following
+                  <i className="fa fa-users" aria-hidden="true"></i>
+                </div>
+                  <li>Nobody D=</li>
+              </ul>
+              <br />
+              <ul>
+                <div>
+                  <i className="fa fa-gratipay" aria-hidden="true"></i>
+                    Songs Liked!
+                  <i className="fa fa-gratipay" aria-hidden="true"></i>
+                </div>
+                <li>Nothing D=</li>
+                <li>(Features to be added)</li>
+              </ul>
             </ul>
           </ul>
         </section>

@@ -136,7 +136,7 @@ class Nav extends React.Component {
           </Link>
           <Link to={`/users/${user.id}`}>
             <p
-              className="form-text">
+              className="greet-text">
                 Hi {user ? user.username : ''}
             </p>
           </Link>

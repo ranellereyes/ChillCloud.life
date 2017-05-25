@@ -92,17 +92,6 @@ $nth: nth($list, $imgKey);
   margin: 12px;
 }
 
-.genre {
-  background-color: $light-gray;
-  border-radius: 10px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 12px;
-  padding-left: 6px;
-  padding-right: 6px;
-}
-
 .song-view-main {
   width: 100%;
   display: flex;
@@ -118,6 +107,16 @@ $nth: nth($list, $imgKey);
   border-top: 2px solid $light-gray;
 }
 
+.genre-label {
+  background-color: $light-gray;
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 7px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
 .song-detail-comp {
   position: relative;
   font-size: 16px;
@@ -133,15 +132,27 @@ $nth: nth($list, $imgKey);
   border-color: $light-gray;
   align-items: center;
 
+
   img {
     width: 150px;
     height: 150px;
   }
 
   p {
+    color: gray;
     align-self: flex-end;
     align-self: baseline;
+    font-family: 'monsterrat', sans-serif;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+
+    i {
+      margin-left: 8px;
+      font-size: 20px;
+    }
   }
+
 }
 
 .song-detail-comp:hover {
@@ -243,9 +254,36 @@ $nth: nth($list, $imgKey);
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
     font-weight: 900;
+  .queue-text {
+    visibility: hidden;
+     width: 120px;
+     background-color: #555;
+     color: #fff;
+     text-align: center;
+     padding: 5px 0;
+     border-radius: 6px;
+
+     /* Position the tooltip text */
+     position: absolute;
+     z-index: 1;
+     top: 125%;
+     left: 50%;
+     margin-left: -60px;
+
+     /* Fade in tooltip */
+     opacity: 0;
+     transition: opacity 1s;
+    }
+}
+
+.queue-button:hover .queue-text {
+    visibility: visible;
+    opacity: 1;
 }
 
 .queue-button:hover {
-    background-color: rgba(0, 173, 239, 0.9);
+  background-color: rgba(0, 173, 239, 0.9);
 }

@@ -18,28 +18,37 @@ export const SongItem = ({match, song, currentUser, play, queue, history}) => {
   };
 
   return (
-        <div className="song-detail-comp"
-          onClick={reroute}>
-          <img src={song.image_url} />
-          <div className="second-col">
-            <section>
-              <div className="buttons">
-                <button
-                  className="play-button"
-                  onClick={playSong}
-                  />
-                <button
-                  className="queue-button"
-                  onClick={queueSong}>+</button>
+    <div className="song-detail-comp"
+      onClick={reroute}>
+      <img src={song.image_url} />
+      <div className="second-col">
+        <section>
+          <div className="buttons">
+            <button
+              className="play-button"
+              onClick={playSong}
+              />
+            <button
+              className="queue-button"
+              onClick={queueSong}>
+              +
+              <div className="queue-text">
+                Add to queue
               </div>
-              <ul className="details">
-                <li key={`title-${song.id}`}>{song.title}</li>
-                <li key={`artist-${song.id}`}>{song.artist}</li>
-              </ul>
-            </section>
+            </button>
           </div>
-          <p className="genre">{song.genre ? `#${song.genre}` : null}</p>
-        </div>
+          <ul className="details">
+            <li key={`title-${song.id}`}>{song.title}</li>
+            <li key={`artist-${song.id}`}>{song.artist}</li>
+          </ul>
+        </section>
+      </div>
+      <div className="genre-label">{song.genre ? `#${song.genre}` : null}</div>
+      <p>
+        {song.comments.length}
+        <i className="fa fa-comments" aria-hidden="true"></i>
+      </p>
+    </div>
   );
 };
 
