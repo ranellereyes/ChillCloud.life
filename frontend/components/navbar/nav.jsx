@@ -125,13 +125,18 @@ class Nav extends React.Component {
               Upload
             </span>
           </button>
-          <img
-            src={`${user ? user.image : ''}`}
-            className="mini" />
-          <p
-            className="form-text">
-              Hi {user ? user.username : ''}
-          </p>
+          <Link to={`/users/${user.id}`}>
+            <img
+              src={`${user ? user.image : ''}`}
+              className="mini" />
+          </Link>
+          <Link to={`/users/${user.id}`}>
+            <p
+              className="form-text">
+                Hi {user ? user.username : ''}
+            </p>
+          </Link>
+            
           <button onClick={this.props.logout}>
             <span>
               Logout

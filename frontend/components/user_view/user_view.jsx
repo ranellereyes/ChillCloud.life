@@ -11,8 +11,16 @@ class UserView extends React.Component {
     this.props.getUser(this.props.match.params.user_id);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.match.params.user_id
+       !== this.props.match.params.user_id &&
+    Boolean(nextProps.match.params.user_id)) {
+      this.props.getUser(nextProps.match.params.user_id);
+    }
+  }
+
   render() {
-    const { username, image, songs } = this.props.users;
+    const { id, username, image, songs } = this.props.users;
 
     if (Object.keys(this.props.users).length === 0 ||
       Array.isArray(this.props.users)) { return null; }
@@ -23,6 +31,10 @@ class UserView extends React.Component {
           <img
             src={image}
             className="large-avatar" />
+          {id === this.props.currentUser.id ?
+            <div className="edit-icon">
+            <i className="fa fa-pencil-square" aria-hidden="true"></i>
+          </div> : null}
         </div>
         <section>
           <ul>
