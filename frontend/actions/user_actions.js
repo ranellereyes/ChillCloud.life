@@ -1,5 +1,6 @@
 import * as APIUtil from '../util/user_util';
 import { errorHandle } from './errors_actions';
+import { receiveCurrentUser } from './session_actions';
 
 export const RANDOM_USERS = "RANDOM_USERS";
 export const SINGLE_USER = "SINGLE_USER";
@@ -32,5 +33,10 @@ export const actionEditUser = (user, id) => dispatch => {
   return APIUtil.editUserRequest(user, id).then(
     res => dispatch(receiveUser(res)),
     e => errorHandle(e, dispatch)
+  ).then(
+    resp => {
+      debugger;
+      dispatch(receiveCurrentUser(resp.user));
+    }
   );
 };

@@ -196,6 +196,19 @@ $nth: nth($list, $imgKey);
   min-width: 260px;
 }
 
+.pause-button {
+    padding: 0px;
+    height: 40px;
+    width: 65px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    position: relative;
+}
+
+.pause-button:hover {
+    background-color: rgba(0, 173, 239, 0.9);
+}
+
 .play-button {
     padding: 0px;
     height: 40px;
