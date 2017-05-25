@@ -65,7 +65,8 @@ $nth: nth($list, $imgKey);
 }
 
 .delete-button:hover {
-  color: red;
+  color: rgba(0, 173, 239, 0.9);
+;
 }
 
 .comment-header {

@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   after_initialize :ensure_session_token
-  before_validation :ensure_unique_token
+  # before_validation :ensure_unique_token
 
   has_many :songs
   has_many :comments
