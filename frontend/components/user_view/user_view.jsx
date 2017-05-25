@@ -106,7 +106,11 @@ class UserView extends React.Component {
             <div className="edit-icon">
             <i className="fa fa-pencil-square"
               aria-hidden="true"
-              onClick={this.openForm}></i>
+              onClick={this.openForm}>
+              <div className="update-text">
+                Edit User Info
+              </div>
+            </i>
           </div> : null}
           <ul className="user-details">
             <li key={`user-${id}`}>{username}</li>

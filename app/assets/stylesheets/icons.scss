@@ -6,6 +6,35 @@
   font-size: 25px;
 }
 
+.update-text {
+  font-family: 'monsterrat', sans-serif;
+  font-size: 15px;
+  visibility: hidden;
+   width: 120px;
+   background-color: #555;
+   color: #fff;
+   text-align: center;
+   padding: 5px 0;
+   border-radius: 6px;
+
+   /* Position the tooltip text */
+   position: absolute;
+   z-index: 1;
+   top: 110%;
+   left: 50%;
+   margin-left: -60px;
+
+   /* Fade in tooltip */
+   opacity: 0;
+   transition: opacity 1s;
+  }
+
+
+.edit-icon:hover .update-text {
+    visibility: visible;
+    opacity: 1;
+}
+
 .edit-icon:hover {
   font-size: 28px;
   color: rgba(0, 185, 255, 0.9);
