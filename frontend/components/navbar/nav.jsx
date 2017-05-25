@@ -93,7 +93,7 @@ class Nav extends React.Component {
   render () {
     const user = this.props.currentUser || null;
 
-    const loggedInNav = (
+    const loggedInNav = user ? (
       <div className="nav-par">
         <div className="left-nav-btns">
           <div className="title">
@@ -136,15 +136,15 @@ class Nav extends React.Component {
                 Hi {user ? user.username : ''}
             </p>
           </Link>
-            
+
           <button onClick={this.props.logout}>
             <span>
               Logout
             </span>
           </button>
         </div>
-    </div>
-    );
+      </div>
+    ) : null;
 
     const loginNav = (
       <div className="nav-par">
