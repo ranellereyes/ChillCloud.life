@@ -2,8 +2,12 @@ class Song < ApplicationRecord
   validates_uniqueness_of :title
   validates_presence_of :title, :user_id
 
-  has_attached_file :image_url, default_url: "https://s3-us-west-1.amazonaws.com/chillcloud-dev/albumDefault.png"
-  has_attached_file :source, default_url: "https://s3-us-west-1.amazonaws.com/chillcloud-dev/nujabes-feather.mp3"
+  has_attached_file :image_url,
+    default_url: "https://s3-us-west-1.amazonaws.com/chillcloud-dev/albumDefault.png",
+    s3_protocol: :https
+  has_attached_file :source,
+    default_url: "https://s3-us-west-1.amazonaws.com/chillcloud-dev/nujabes-feather.mp3",
+    s3_protocol: :https
 
   # validates_attachment_content_type :image_url, content_type: /\Aimage\/.*\z/
   validates_attachment_content_type :source, content_type: /\Aaudio\/.*\z/
