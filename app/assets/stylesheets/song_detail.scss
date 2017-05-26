@@ -205,6 +205,7 @@ $nth: nth($list, $imgKey);
   width: 100%;
   height: 100%;
   border-right: 2px solid $light-gray;
+  min-height: 50vh;
 }
 
 .artist-similar {
@@ -254,7 +255,6 @@ $nth: nth($list, $imgKey);
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     position: relative;
-    z-index: 9;
 }
 
 .play-button:hover {

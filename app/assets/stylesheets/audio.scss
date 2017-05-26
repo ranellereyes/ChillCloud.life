@@ -8,7 +8,6 @@ $light-gray: #e2e2e2;
   height: 40px;
   color: black;
   position: fixed;
-  left: 30px;
   bottom: 0px;
   background-color: white;
 }
@@ -45,10 +44,30 @@ footer {
   }
 }
 
+.scan {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
 span {
   width: inherit;
   height: inherit;
   position: relative;
+}
+
+.fa-fast-forward {
+  position: absolute;
+  border-top: 2px solid $light-gray;
+  border-left: 2px solid $light-gray;
+  border-right: 2px solid $light-gray;
+  font-size: 19px;
+  padding: 3px;
+  border-radius: 4px;
+  background: white;
+  bottom: 0px;
+  right: 0px;
 }
 
 footer > div {
