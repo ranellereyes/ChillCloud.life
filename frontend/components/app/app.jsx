@@ -11,7 +11,6 @@ import LoadingContainer from './loading_container';
 import AudioPlayerContainer from '../audio_player/audio_player_container';
 import UserViewContainer from '../user_view/user_view_container';
 // TEST
-import GreetingContainer from '../greeting/greeting_container';
 
 const App = ({current_user}) => {
   return (
