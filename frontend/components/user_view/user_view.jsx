@@ -17,7 +17,7 @@ const stylin = {
     position        : 'fixed',
     margin          : 'auto',
     width           : '290px',
-    height          : '240px',
+    height          : '280px',
     border          : '1px solid #ccc',
     padding         : '20px',
     zIndex          : 11,
@@ -126,17 +126,22 @@ class UserView extends React.Component {
             <p className="form-title">
               ChillCloud
             </p>
+            <br />
             <input
               type="text"
               value={this.state.username}
-              onChange={this.update('username')}/>
+              onChange={this.update('username')}
+              className="login-input"/>
             <label className="form-text"> Username
             </label>
+            <br />
             <input
               type="file"
-              onChange={this.update('image')}/>
+              onChange={this.update('image')}
+              className="login-input"/>
             <label className="form-text"> Profile Pic
             </label>
+            <br />
             <button
               onClick={this.handleSubmit}>
               Update!
