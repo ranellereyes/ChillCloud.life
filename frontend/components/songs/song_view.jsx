@@ -47,6 +47,7 @@ class SongView extends React.Component {
     this.update = this.update.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
     this.reroute = this.reroute.bind(this);
+    this.rerouteSong = this.rerouteSong.bind(this);
     // this.props.getSong = this.props.getSong.bind(this);
   }
 
@@ -61,6 +62,15 @@ class SongView extends React.Component {
   reroute (e) {
     e.preventDefault();
     this.props.history.push(`/users/${this.props.songs.user_id}`);
+  }
+
+  rerouteSong (id) {
+    return (e) => {
+      e.preventDefault();
+      // this.props.history.push(`/songs/${id}`).then(() => (this.props.getSong(id)));
+      this.props.getSong(id)
+        .then(this.props.history.push(`/songs/${id}`));
+    };
   }
 
   componentWillUnmount() {
@@ -227,11 +237,25 @@ class SongView extends React.Component {
             ))) : null}
 
             </ul>
-          <ul
-            className="artist-similar link"
-            onClick={this.reroute}>
-            Similar songs from {songs.artist}!
-
+          <ul className="artist-similar">
+            <p
+              className="link"
+              onClick={this.reroute}>
+              Similar songs from {songs.artist}!
+            </p>
+            {songs.otherSongs.length === 0 ?
+              <li>None D=</li> :
+              songs.otherSongs.map((song, i) => (
+                <li
+                  key={`other-${i}`}
+                  className="link"
+                  onClick={this.rerouteSong(song.id)}>
+                  <img
+                    src={`${song.image}`}
+                    className="mini"/>
+                  {song.title}
+                </li>
+            ))}
           </ul>
         </div>
       </main>

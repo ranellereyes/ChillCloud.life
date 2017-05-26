@@ -102,7 +102,7 @@ $nth: nth($list, $imgKey);
 .bottom-view {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: flex-start;
   margin-top: 20px;
   border-top: 2px solid $light-gray;
 }
@@ -198,15 +198,36 @@ $nth: nth($list, $imgKey);
 
 .comments {
   display: flex;
+  flex-grow: 2;
   flex-direction: column;
   width: 100%;
-  margin: 20px;
 }
 
 .artist-similar {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   min-width: 260px;
+  border-left: 2px solid $light-gray;
+}
+
+.artist-similar {
+  p {
+    font-family: 'monsterrat' sans-serif;
+    padding-top: 15px;
+    padding-bottom: 11px;
+    border-bottom: 2px solid $light-gray;
+    width: 100%;
+    text-align: center;
+    align-self: center;
+  }
+
+  li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+  }
 }
 
 .pause-button {
