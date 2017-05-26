@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(clearErrors());
     },
     demoLogin: () => (
-      dispatch(actionLogin({username: "Nujabes", password: "password"}))
+      dispatch(actionLogin({username: "Demo", password: "password"}))
     )
   };
 };
