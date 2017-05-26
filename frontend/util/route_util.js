@@ -6,8 +6,6 @@ const mapStateToProps = state => {
   return {loggedIn: Boolean(state.session.currentUser)};
 };
 
-//functional component
-// the props below are passed in from Route
 const Auth = ({component: Component, path, loggedIn}) => (
   <Route path={path} render={(props) => (
       !loggedIn ? (

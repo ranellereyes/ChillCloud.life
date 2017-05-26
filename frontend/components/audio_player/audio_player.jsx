@@ -7,9 +7,9 @@ class AudioPlayer extends React.Component {
 
     this.state = {
       playlist: this.props.playlist,
-      player: document.getElementById("Audio")
     };
 
+    this.player = document.getElementById("Audio");
 
     // this.playNext = this.playNext.bind(this);
     window.playlist = this.state.playlist;

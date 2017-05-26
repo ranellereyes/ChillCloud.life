@@ -160,7 +160,9 @@ class SongView extends React.Component {
       backgroundImage: `url(${this.state.rand})`
     };
 
-    return (!Array.isArray(songs) && Object.keys(songs).length > 0) ? (
+    return (!songs.redirect
+      && !Array.isArray(songs)
+      && Object.keys(songs).length > 0) ? (
       <main className="song-view-main">
         <div
           className="song-view"
