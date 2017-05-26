@@ -9,8 +9,12 @@ export const SongItem = ({match, song, currentUser, play, queue, history}) => {
     e.preventDefault();
     play(song);
   };
-  const queueSong = () => (queue(song));
 
+  const queueSong = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    queue(song);
+  };
 
   const reroute = (e) => {
     e.stopPropagation();
