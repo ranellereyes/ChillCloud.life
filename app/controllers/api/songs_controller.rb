@@ -1,6 +1,6 @@
 class Api::SongsController < ApplicationController
   def index
-    @songs = Song.order("RANDOM()")
+    @songs = Song.all.includes(:comments, :user).order("RANDOM()")
     render 'api/songs/index'
   end
 
