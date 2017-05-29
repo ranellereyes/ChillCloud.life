@@ -39,8 +39,6 @@ Along with the Audio Playback, the Navigation Bar is rendered with every single 
 
 * Ability to save and upload playlists
 
-* Search bar functionality that searches all forms of data (song title, artists name, playlist names, playlist with certain songs in, etc.)
-
 * Waveforms
 
 * Custom made audio player
