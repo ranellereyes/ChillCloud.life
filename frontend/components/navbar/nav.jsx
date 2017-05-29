@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import SessionFormContainer from '../session_forms/session_form_container';
 import UploadFormContainer from '../upload_forms/upload_form_container';
 import { Link } from 'react-router-dom';
@@ -56,10 +57,10 @@ class Nav extends React.Component {
     this.state = {
       userFormIsOpen: false,
       uploadFormIsOpen: false,
-      action: '',
-      query: ''
+      action: ''
     };
 
+    this.clearField = this.clearField.bind(this);
     this.update = this.update.bind(this);
     this.openUserForm = this.openUserForm.bind(this);
     this.closeUserForm = this.closeUserForm.bind(this);
@@ -88,8 +89,13 @@ class Nav extends React.Component {
   update(e) {
     e.preventDefault();
     // this.setState({query: e.currentTarget.value});
-    debugger;
-    this.props.query(e.currentTarget.value);
+    (e.currentTarget.value !== "") ?
+      this.props.query(e.currentTarget.value) :
+      this.props.clearSearch();
+  }
+
+  clearField(e) {
+    e.currentTarget.value = "";
   }
 
   componentWillUnmount() {
@@ -118,11 +124,30 @@ class Nav extends React.Component {
             </button>
           </Link>
         </div>
-        <i className="fa fa-search" aria-hidden="true"></i>
-        <input type="text"
-          className="search-bar"
-          placeholder="Currently Disabled"
-          onChange={this.update} />
+        <div className="search-container">
+          <input type="text"
+            className="search-bar"
+            placeholder="Search Artists and Songs"
+            onChange={this.update}
+            onBlur={this.clearField} />
+            <ul
+              className="search-results">
+              {this.props.search.map((entry, i) => (
+                <Link key={`link-${i}`}
+                  to={entry.username ?
+                    `/users/${entry.id}` :
+                    `/songs/${entry.id}`}
+                  onClick={this.props.clearSearch}>
+                  <li key={`entry-${i}`}>
+                    <img
+                      src={`${entry.image || entry.image_url}`}
+                      className="mini"/>
+                    <p>{entry.username || entry.title}</p>
+                  </li>
+                </Link>
+              ))}
+            </ul>
+          </div>
         <div className="right-nav-btns">
           <Modal
             isOpen={this.state.uploadFormIsOpen}

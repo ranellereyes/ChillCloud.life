@@ -24,11 +24,45 @@ header {
   left: 0;
 }
 
-.search-bar {
+.search-container {
   width: 100%;
+  max-width: 550px;
   font-size: 12px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
+
+.search-bar {
+  font-family: 'monsterrat' sans-serif;
+  font-size: 12px;
+  position: relative;
+}
+
+.search-results {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 27px;
+  border: 0px, 2px, 0px, 2px solid $light-gray;
+
+  li {
+    display: flex;
+    background-color: white;
+    padding: 3px;
+    border-bottom: 2px solid $light-gray;
+    align-items: center;
+    flex-direction: row;
+    font-size: 14px;
+  }
+
+  li:hover {
+    background-color: $light-gray;
+  }
+}
+
 
 .background {
   width: 100vw;
