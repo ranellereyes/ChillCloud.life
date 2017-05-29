@@ -87,11 +87,7 @@ class Nav extends React.Component {
   }
 
   update(e) {
-    e.preventDefault();
-    // this.setState({query: e.currentTarget.value});
-    (e.currentTarget.value !== "") ?
-      this.props.query(e.currentTarget.value) :
-      this.props.clearSearch();
+    this.props.query(e.currentTarget.value);
   }
 
   clearField(e) {
@@ -132,7 +128,8 @@ class Nav extends React.Component {
             onBlur={this.clearField} />
             <ul
               className="search-results">
-              {this.props.search.map((entry, i) => (
+              {(this.props.search) ? (
+                this.props.search.map((entry, i) => (
                 <Link key={`link-${i}`}
                   to={entry.username ?
                     `/users/${entry.id}` :
@@ -145,7 +142,7 @@ class Nav extends React.Component {
                     <p>{entry.username || entry.title}</p>
                   </li>
                 </Link>
-              ))}
+              ))) : null }
             </ul>
           </div>
         <div className="right-nav-btns">

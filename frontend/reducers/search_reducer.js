@@ -1,6 +1,5 @@
 import { SEARCH, CLEAR } from '../actions/search_actions';
 
-
 const SearchReducer = function(state = [], action){
   switch(action.type){
     case SEARCH:
