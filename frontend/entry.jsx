@@ -5,7 +5,7 @@ import Root from './components/root';
 import Modal from 'react-modal';
 
 // TESTING
-import * as Test from './actions/search_actions';
+// import * as Test from './actions/search_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
       store = configureStore();
     }
 
-    window.store = store;
-    window.test = Test;
+    // window.store = store;
+    // window.test = Test;
     Modal.setAppElement(document.body);
     ReactDOM.render(<Root store={store}/>, root);
 });
