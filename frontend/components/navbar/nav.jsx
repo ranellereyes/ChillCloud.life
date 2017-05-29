@@ -87,11 +87,15 @@ class Nav extends React.Component {
   }
 
   update(e) {
-    this.props.query(e.currentTarget.value);
+    this.setState({query: e.currentTarget.value});
+    e.currentTarget.value === "" ?
+      this.props.clearSearch :
+      this.props.query(e.currentTarget.value);
   }
 
   clearField(e) {
     e.currentTarget.value = "";
+    setTimeout(this.props.clearSearch, 250);
   }
 
   componentWillUnmount() {
