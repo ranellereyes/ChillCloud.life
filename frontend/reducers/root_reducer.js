@@ -5,6 +5,7 @@ import SongReducer from './song_reducer';
 import LoadingReducer from './loading_reducer';
 import AudioPlayerReducer from './audio_player_reducer';
 import UserReducer from './user_reducer';
+import SearchReducer from './search_reducer';
 
 export default combineReducers({
   session: SessionReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   songs: SongReducer,
   loading: LoadingReducer,
   playlist: AudioPlayerReducer,
-  users: UserReducer
+  users: UserReducer,
+  search: SearchReducer
 });

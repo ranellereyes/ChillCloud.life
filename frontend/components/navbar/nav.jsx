@@ -56,9 +56,11 @@ class Nav extends React.Component {
     this.state = {
       userFormIsOpen: false,
       uploadFormIsOpen: false,
-      action: ''
+      action: '',
+      query: ''
     };
 
+    this.update = this.update.bind(this);
     this.openUserForm = this.openUserForm.bind(this);
     this.closeUserForm = this.closeUserForm.bind(this);
     this.openUploadForm = this.openUploadForm.bind(this);
@@ -81,6 +83,13 @@ class Nav extends React.Component {
 
   closeUserForm() {
     this.setState({userFormIsOpen: false});
+  }
+
+  update(e) {
+    e.preventDefault();
+    // this.setState({query: e.currentTarget.value});
+    debugger;
+    this.props.query(e.currentTarget.value);
   }
 
   componentWillUnmount() {
@@ -112,7 +121,8 @@ class Nav extends React.Component {
         <i className="fa fa-search" aria-hidden="true"></i>
         <input type="text"
           className="search-bar"
-          placeholder="Currently Disabled" />
+          placeholder="Currently Disabled"
+          onChange={this.update} />
         <div className="right-nav-btns">
           <Modal
             isOpen={this.state.uploadFormIsOpen}

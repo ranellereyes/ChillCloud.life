@@ -5,7 +5,7 @@ import Root from './components/root';
 import Modal from 'react-modal';
 
 // TESTING
-import * as Test from './util/user_util';
+import * as Test from './actions/search_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
