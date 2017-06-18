@@ -2,8 +2,8 @@ class Api::SongsController < ApplicationController
   def index
     if params[:search]
       query = "%#{params[:search]}%".downcase
+      @users = User.where("lower(username) LIKE ?", query).limit(4)
       @songs = Song.where("lower(title) LIKE ?", query).limit(6)
-      @users = User.where("lower(username) LIKE ?", query).limit(3)
       render 'api/songs/search'
     else
       @songs = Song.all.includes(:comments, :user).order("RANDOM()")
