@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20170524161403) do
   create_table "songs", force: :cascade do |t|
     t.string   "title",                  null: false
     t.integer  "user_id",                null: false
-    t.string   "image_url"
+    t.string   "image"
     t.string   "genre"
     t.string   "length"
     t.datetime "created_at",             null: false
