@@ -46,7 +46,6 @@ header {
   flex-direction: column;
   position: absolute;
   top: 27px;
-  border: 0px, 2px, 0px, 2px solid $light-gray;
 
   li {
     display: flex;
@@ -230,15 +229,15 @@ button {
 .splash-image {
   // position: relative;
   // width: 100%;
-  // height: auto;
+  height: auto;
   z-index: 1;
 
   .splash-text {
-    background-image: url('https://s3-us-west-1.amazonaws.com/chillcloud-dev/splash.jpg');
+    background-image: url('https://s3-us-west-1.amazonaws.com/chillcloud-dev/Splash.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding-bottom: 90px;
+    // padding-bottom: 90px;
     justify-content: center;
     align-items: center;
     display: flex;

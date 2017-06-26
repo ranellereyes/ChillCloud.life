@@ -21,12 +21,12 @@ $light-gray: #e2e2e2;
 }
 
 main {
-  margin-left: 35px;
-  margin-right: 35px;
+  margin-left: 80px;
+  margin-right: 80px;
   border-right: 2px solid $light-gray;
   border-left: 2px solid $light-gray;
   height: 100%;
-  min-height: 90vh;
+  // min-height: 90vh;
   display: flex;
   margin-top: 50px;
   padding-bottom: 50px;
