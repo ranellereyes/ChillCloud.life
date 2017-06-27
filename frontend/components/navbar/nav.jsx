@@ -20,7 +20,7 @@ const modalSplashStyle = {
     position        : 'fixed',
     margin          : 'auto',
     width           : '330px',
-    height          : '380px',
+    height          : '390px',
     border          : '1px solid #ccc',
     padding         : '20px',
     zIndex          : 11,
@@ -42,7 +42,7 @@ const modalUploadStyle = {
     position        : 'fixed',
     margin          : 'auto',
     width           : '70vh',
-    height          : '80vh',
+    height          : '450px',
     border          : '1px solid #ccc',
     padding         : '20px',
     zIndex          : 11,
@@ -119,7 +119,7 @@ class Nav extends React.Component {
           <Link to="/stream">
             <button>
               <span>
-                Collection
+                Home
               </span>
             </button>
           </Link>

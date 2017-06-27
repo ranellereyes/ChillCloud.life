@@ -122,7 +122,7 @@ input {
   margin-top: 3px;
   margin-left: 10px;
   margin-right: 7.5px;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .form-title {
@@ -194,6 +194,7 @@ input {
 .right-nav-btns {
   display: flex;
   align-items: center;
+  padding-right: 30px;
 
   p {
     font-family: 'Monsterrat', sans-serif;
@@ -202,15 +203,23 @@ input {
   }
 }
 
+.right-nav-btns > * {
+  margin-left: 12px;
+}
+
 .left-nav-btns {
+  padding-left: 30px;
   display: flex;
   align-items: center;
+}
 
+.left-nav-btns > * {
+  padding-right: 12px;
 }
 
 button {
-  font-size: 16px;
-  border-radius: 8px;
+  // font-size: 22px;
+  border-radius: 3px;
   background-color: $light-blue;
   border: $dark-blue;
   color: white;
@@ -218,7 +227,7 @@ button {
   font-size: 13px;
   padding: 2px;
   width: 75px;
-  height: 22px;
+  height: 25px;
   transition: all 0.3s;
   cursor: pointer;
   margin-right: 7.5px;
@@ -271,6 +280,7 @@ button {
   button {
     span {
       font-family: 'Monsterrat', sans-serif;
+      font-size: 14px;
       cursor: pointer;
       // display: inline-block;
       position: relative;
@@ -292,7 +302,7 @@ button {
 
 
   button:hover {
-    background-color: $blue;
+    background-color: rgba(0, 173, 239, 0.9);
     span {
       padding-right: 12px;
     }
