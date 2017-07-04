@@ -125,6 +125,17 @@ input {
   font-size: 35px;
 }
 
+.nav-title {
+  font-family: 'Satisfy', cursive;
+  font-weight: 600;
+  text-shadow: 2px 2px $shadow;
+  color: white;
+  margin-top: 3px;
+  margin-left: 40px;
+  margin-right: 7.5px;
+  font-size: 35px;
+}
+
 .form-title {
   font-family: 'Satisfy', cursive;
   text-align: center;
@@ -269,10 +280,10 @@ button {
 
     p {
       font-family: 'Kaushan Script', cursive;
-      text-shadow: 2px 2px $shadow;
+      text-shadow: 4px 4px $shadow;
       text-transform: full-width;
       margin-top: 15px;
-      font-size: 20px;
+      font-size: 35px;
     }
   }
 }

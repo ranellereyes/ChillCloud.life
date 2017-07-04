@@ -188,7 +188,7 @@ class Nav extends React.Component {
 
     const loginNav = (
       <div className="nav-par">
-        <div className="title">
+        <div className="nav-title">
           ChillCloud
         </div>
         <div className="right-nav-btns">
