@@ -114,20 +114,20 @@ class UploadForm extends React.Component {
 							</label>
 
             <br />
-              <input type="file"
-                onChange={this.update("source")}
-                className="login-input" />
-              <label className="form-text">
-                Music File
-              </label>
+							<label className="custom-music-upload form-text">
+							  <i className="fa fa-cloud-upload"></i> Music File
+	              <input type="file"
+	                onChange={this.update("source")}
+	                className="login-input" />
+							</label>
 
             <br />
-              <input type="file"
-                onChange={this.update("image_url")}
-                className="login-input" />
-              <label className="form-text">
-                Cover Image
-              </label>
+							<label className="custom-music-upload form-text">
+							    <i className="fa fa-cloud-upload"></i> Cover Art
+	              <input type="file"
+	                onChange={this.update("image_url")}
+	                className="login-input" />
+							</label>
 							<label className="sublabel">
 								(optional)
 							</label>

@@ -41,7 +41,7 @@ const modalUploadStyle = {
   content : {
     position        : 'fixed',
     margin          : 'auto',
-    width           : '70vh',
+    width           : '330px',
     height          : '450px',
     border          : '1px solid #ccc',
     padding         : '20px',

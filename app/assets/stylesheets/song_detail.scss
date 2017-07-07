@@ -8,6 +8,22 @@ $list: cover1, cover2, cover3, cover4, cover5, cover6, cover7, cover8;
 $nth: nth($list, $imgKey);
 
 
+input[type="file"] {
+    display: none;
+}
+
+.custom-music-upload {
+    border: 1px solid $gray;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.custom-music-upload:hover {
+  background-color: white;
+  color: rgba(0, 185, 255, 0.9);
+}
+
 .song-view {
   width: auto;
   height: 380px;
