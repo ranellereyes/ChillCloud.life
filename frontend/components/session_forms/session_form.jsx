@@ -90,6 +90,7 @@ class SessionForm extends React.Component {
 									</span>
 								</button>
 								<br />
+								<p className="linebreak"/>
 								<br />
 								<button
 									onClick={this.switchForm}>

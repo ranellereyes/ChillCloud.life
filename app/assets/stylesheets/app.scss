@@ -68,6 +68,11 @@ main {
   }
 }
 
+.linebreak {
+  border-bottom: 2px solid gray;
+  width: 240px;
+}
+
 .link:hover {
   background-color: $light-gray;
 }
