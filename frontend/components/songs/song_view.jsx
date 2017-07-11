@@ -246,7 +246,7 @@ class SongView extends React.Component {
               Similar songs from {songs.artist}!
             </p>
             {songs.otherSongs.length === 0 ?
-              <li>None D=</li> :
+              <li>No other uploaded songs</li> :
               songs.otherSongs.map((song, i) => (
                 <li
                   key={`other-${i}`}

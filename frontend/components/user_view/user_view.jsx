@@ -176,16 +176,16 @@ class UserView extends React.Component {
                     Following
                   <i className="fa fa-users" aria-hidden="true"></i>
                 </div>
-                  <li>Nobody D=</li>
+                  <li>Nobody</li>
               </ul>
               <br />
               <ul>
                 <div>
                   <i className="fa fa-gratipay" aria-hidden="true"></i>
-                    Songs Liked!
+                    Liked Songs
                   <i className="fa fa-gratipay" aria-hidden="true"></i>
                 </div>
-                <li>Nothing D=</li>
+                <li>Nothing</li>
                 <li>(Features to be added)</li>
               </ul>
             </ul>

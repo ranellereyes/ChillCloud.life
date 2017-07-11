@@ -67,6 +67,10 @@ input[type="file"] {
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  a {
+    padding-right: 12px;
+  }
 }
 
 .delete-button {

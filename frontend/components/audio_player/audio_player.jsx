@@ -61,7 +61,7 @@ class AudioPlayer extends React.Component {
     ) : (
       <footer>
         <marquee className="empty-queue">
-          Nothing in queue D=
+          Playlist currently empty...
         </marquee>
       </footer>
     );
